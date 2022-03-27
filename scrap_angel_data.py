@@ -1,4 +1,4 @@
-from angel_urls import standard_urls,non_standard_urls,page_xpath,remove_attribute
+from angel_urls import standard_urls,para_wise_delim,page_xpath,remove_attribute,page_wise_delimeter
 import requests
 from html.parser import HTMLParser
 from lxml import etree
@@ -14,24 +14,31 @@ def get_xpath(url):
 
 def scrape_and_parse_data(standard_urls):
     for url in standard_urls:
-         url = url.replace('@#$', '55')
+         url = url.replace('@#$', '667')
          xpath = get_xpath(url)
          response = requests.get(url)
          tree = etree.HTML(response.content)
-         data = tree.xpath(xpath)
-         data = etree.tostring(data[0]).decode('utf-8')
+         encoded_data = tree.xpath(xpath)
+         html_data = None
+         data_list = []
+         for data in encoded_data:
+             data_list.append(etree.tostring(data).decode('utf-8'))
+         html_data = ''.join(data_list)
          if response.status_code == 200:
              parser = MYhtmlparser()
-             parser.feed(data)
+             parser.feed(html_data)
              with open('angel_55.html','w') as f:
-                 f.write(parser.document_content)
+                 scrapped_data = parser.document_content
+                 scrapped_data+= page_wise_delimeter
+                 f.write(scrapped_data)
+                 print(f'url scrapped {url}')
 
 
 class MYhtmlparser(HTMLParser):
 
     document_content = ''
     p_open = False
-    h_open = False
+    is_consecutive_h = False
     ignore_content = False
     current_tag_to_remove = None
     count_removing_tag = 0
@@ -66,8 +73,13 @@ class MYhtmlparser(HTMLParser):
         self.is_remove_element(tag, attrs)
         if not self.ignore_content:
             if tag in ['h1','h2','h3','h4','h5','h6'] :
+                if self.is_consecutive_h:
+                    self.document_content+=para_wise_delim
                 self.document_content += f"<{tag}>"
+
+
             if tag == 'p' :
+                self.is_consecutive_h = False
                 self.document_content += f"<{tag}>"
 
 
@@ -75,8 +87,10 @@ class MYhtmlparser(HTMLParser):
         if not self.ignore_content:
             if tag in ['h1','h2','h3','h4','h5','h6'] :
                 self.document_content += f"</{tag}>"
+                self.is_consecutive_h = True
             if tag == 'p':
                 self.document_content += f"</{tag}>"
+                self.document_content+=para_wise_delim
         self.reset_removing_tag(tag)
 
     def handle_data(self,data):
