@@ -1,6 +1,8 @@
 import pandas as pd
 import os
 from urllib.parse import urlparse
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
 
 if not os.path.exists('../UpWork-project-Mangal/interested_urls'):
 	os.mkdir('../UpWork-project-Mangal/interested_urls')
@@ -23,12 +25,11 @@ for filename in os.listdir(os.getcwd()):
     xml_files = []
     data = pd.read_csv(filename)
     urls = data.iloc[:,0].tolist()
+    urls = [x for x in urls if str(x) != 'nan']
     for url in urls:
         parsed_url = urlparse(url)
         url_without_query_string = parsed_url.scheme + "://" + parsed_url.netloc + parsed_url.path
         extension = url_without_query_string[url_without_query_string.rfind('.')+1:]
-        if url_without_query_string == "https://divineangelnumbers.com/wp-content/uploads/2021/08/Footprints-In-The-Sand.pdf":
-            print("k")
         ignore_extensions = ['php', 'png', 'jpg', 'pdf']
         if extension not in ignore_extensions:
             if "xml" in extension:
@@ -49,7 +50,7 @@ for filename in os.listdir(os.getcwd()):
     df2 = pd.DataFrame({'address':non_interested_urls})
     df3 = pd.DataFrame({'address': xml_files})
 
-    new_filename = filename[filename.find('_')+1:filename.find('.')]
+    new_filename = filename[filename.find('_')+1:filename.rfind('.')]
     df.to_csv("../interested_urls/" + new_filename + ".csv",index =True)
     df1.to_csv("../doubtful_urls/" + new_filename + ".csv", index=True)
     df2.to_csv("../non_interested_urls/" + new_filename + ".csv", index=True)
