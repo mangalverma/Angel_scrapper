@@ -1,8 +1,7 @@
 import pandas as pd
 import os
 from urllib.parse import urlparse
-import gspread
-from oauth2client.service_account import ServiceAccountCredentials
+
 
 if not os.path.exists('../UpWork-project-Mangal/interested_urls'):
 	os.mkdir('../UpWork-project-Mangal/interested_urls')
