@@ -1,4 +1,4 @@
-from angel_urls import standard_urls,para_wise_delim,page_xpath,remove_attribute,page_wise_delimeter
+from angel_urls import para_wise_delim,page_xpath,remove_attribute,page_wise_delimeter,url_patterns,ignore_site_num,remove_code
 import requests
 from html.parser import HTMLParser
 from lxml import etree
@@ -12,26 +12,49 @@ def get_xpath(url):
         print(f'WARNING:add page_xpath for {url}')
         return '//body'
 
-def scrape_and_parse_data(standard_urls):
-    for url in standard_urls:
-         url = url.replace('@#$', '667')
-         xpath = get_xpath(url)
-         response = requests.get(url)
-         tree = etree.HTML(response.content)
-         encoded_data = tree.xpath(xpath)
-         html_data = None
-         data_list = []
-         for data in encoded_data:
-             data_list.append(etree.tostring(data).decode('utf-8'))
-         html_data = ''.join(data_list)
-         if response.status_code == 200:
-             parser = MYhtmlparser()
-             parser.feed(html_data)
-             with open('angel_55.html','w') as f:
-                 scrapped_data = parser.document_content
-                 scrapped_data+= page_wise_delimeter
-                 f.write(scrapped_data)
-                 print(f'url scrapped {url}')
+def store_scrapped_data(data,angel_number):
+    file_name = f"angel_number-{angel_number}.html"
+    with open (file_name,'w') as f:
+        f.write(data)
+        print(f'Raw data Created for angel number - {angel_number}')
+
+def remove_html_data(url,html_data):
+    for domain_name,rmv_code in remove_code.items():
+        if url.startswith(domain_name):
+            for code in rmv_code:
+               html_data = html_data.replace(code,'')
+    return html_data
+
+def scrape_and_parse_data(url_patterns,angel_number):
+
+    scrapped_data = ''
+    for site_num,patterns in url_patterns.items():
+       if int(site_num) not in ignore_site_num:
+         for pattern in patterns:
+             url = pattern.replace('@#$', str(angel_number))
+             response = requests.get(url)
+             if response.status_code !=200:
+                 continue
+             else:
+                 xpath = get_xpath(url)
+                 tree = etree.HTML(response.content)
+                 encoded_data = tree.xpath(xpath)
+                 html_data = None
+                 data_list = []
+                 for data in encoded_data:
+                   data_list.append(etree.tostring(data).decode('utf-8'))
+                 html_data = ''.join(data_list)
+                 html_data=remove_html_data(url,html_data)
+                 if response.status_code == 200:
+                     parser = MYhtmlparser()
+                     parser.feed(html_data)
+                     temp_data = parser.document_content
+                     temp_data+= page_wise_delimeter
+                     scrapped_data += temp_data
+                     print(f'[{url}]Raw data added for angel number - {angel_number}')
+                 break
+    store_scrapped_data(scrapped_data,angel_number)
+
 
 
 class MYhtmlparser(HTMLParser):
@@ -101,4 +124,4 @@ class MYhtmlparser(HTMLParser):
                 data = data.replace('â€“','-')
                 self.document_content+=data
 
-scrape_and_parse_data(standard_urls)
+scrape_and_parse_data(url_patterns,222)
