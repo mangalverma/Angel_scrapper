@@ -25,7 +25,7 @@ def remove_html_data(url,html_data):
     for domain_name,rmv_code in remove_code.items():
         if url.startswith(domain_name):
             for code in rmv_code:
-               html_data = html_data.replace(code,'UA')
+               html_data = html_data.replace(code,'')
     return html_data
 
 def scrape_and_parse_data(url_patterns,angel_number):
