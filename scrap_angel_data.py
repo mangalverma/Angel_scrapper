@@ -124,4 +124,8 @@ class MYhtmlparser(HTMLParser):
                 data = data.replace('â€“','-')
                 self.document_content+=data
 
+if not os.path.exists('Angel_number_html'):
+	os.mkdir('Angel_number_html')
+if not os.path.exists('Angel_number_txt'):
+	os.mkdir('Angel_number_txt')
 scrape_and_parse_data(url_patterns,222)
