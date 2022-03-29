@@ -1,8 +1,9 @@
 remove_attribute = [('id',['ez-toc-container','dpsp-floating-sidebar','comments','dpsp-content-bottom']),('class',['main-header-bar-wrap','purplebox','pinkbox','trail-items','class','skip-link screen-reader-text','entry-meta','yellowbox','tablelinks','saboxplugin-wrap','emalsubinpt','dpsp-share-text','nav-links','screen-reader-text','dpsp-share-text ','n-square'])]
-page_xpath = [('https://hiddennumerology.com',"//main[@id='main']"),('https://numeroscop.net',"//section[@class='text']")]
+page_xpath = [('https://hiddennumerology.com',"//main[@id='main']"),
+              ('https://www.adviseastro.com/',"//div[@class='inside-article']")]
 page_wise_delimeter = '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'
 para_wise_delim = '@@@@@@@@@@@@@@@@@@@'
-ignore_site_num = [1,2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+ignore_site_num = [2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
 url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and-symbolism/"],
         '2':  ['https://angelmanifest.com/angel-number-@#$/'],
         '3':  ["https://angelnumber.me/@#$-meaning/"],

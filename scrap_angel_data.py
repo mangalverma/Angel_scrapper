@@ -3,7 +3,10 @@ import requests
 from html.parser import HTMLParser
 from lxml import etree
 from unicodedata import  normalize
+import os
+from html_content_merger import *
 
+UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.80 Safari/537.36'
 def get_xpath(url):
     for domain_name,xpath in page_xpath:
         if url.startswith(domain_name):
@@ -22,7 +25,7 @@ def remove_html_data(url,html_data):
     for domain_name,rmv_code in remove_code.items():
         if url.startswith(domain_name):
             for code in rmv_code:
-               html_data = html_data.replace(code,'')
+               html_data = html_data.replace(code,'UA')
     return html_data
 
 def scrape_and_parse_data(url_patterns,angel_number):
@@ -32,8 +35,9 @@ def scrape_and_parse_data(url_patterns,angel_number):
        if int(site_num) not in ignore_site_num:
          for pattern in patterns:
              url = pattern.replace('@#$', str(angel_number))
-             response = requests.get(url)
+             response = requests.get(url,headers={"User-Agent": ""})
              if response.status_code !=200:
+                 print(f"{url} NOT FOUND -{ response.status_code}")
                  continue
              else:
                  xpath = get_xpath(url)
@@ -53,7 +57,8 @@ def scrape_and_parse_data(url_patterns,angel_number):
                      scrapped_data += temp_data
                      print(f'[{url}]-->Raw data added for angel number - {angel_number}')
                  break
-    store_scrapped_data(scrapped_data,angel_number)
+    if scrapped_data:
+         merge_scrapped_data(scrapped_data,angel_number)
 
 
 
@@ -125,7 +130,8 @@ class MYhtmlparser(HTMLParser):
                 self.document_content+=data
 
 if not os.path.exists('Angel_number_html'):
-	os.mkdir('Angel_number_html')
+    os.mkdir('Angel_number_html')
+
 if not os.path.exists('Angel_number_txt'):
-	os.mkdir('Angel_number_txt')
-scrape_and_parse_data(url_patterns,222)
+  os.mkdir('Angel_number_txt')
+scrape_and_parse_data(url_patterns,1111)
