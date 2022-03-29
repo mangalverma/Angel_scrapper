@@ -51,7 +51,7 @@ def scrape_and_parse_data(url_patterns,angel_number):
                      temp_data = parser.document_content
                      temp_data+= page_wise_delimeter
                      scrapped_data += temp_data
-                     print(f'[{url}]Raw data added for angel number - {angel_number}')
+                     print(f'[{url}]-->Raw data added for angel number - {angel_number}')
                  break
     store_scrapped_data(scrapped_data,angel_number)
 
