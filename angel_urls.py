@@ -1,9 +1,12 @@
-remove_attribute = [('id',['ez-toc-container','dpsp-floating-sidebar','comments','dpsp-content-bottom']),('class',['main-header-bar-wrap','purplebox','pinkbox','trail-items','class','skip-link screen-reader-text','entry-meta','yellowbox','tablelinks','saboxplugin-wrap','emalsubinpt','dpsp-share-text','nav-links','screen-reader-text','dpsp-share-text ','n-square'])]
+remove_attribute = {'https://angelnumber.org': {'id': ['M381992ScriptRootC303780'],'class': ['hm-related-posts']},
+                    'https://angelmanifest.com': {'class': ['wp-block-embed is-type-wp-embed is-provider-angel-manifest wp-block-embed-angel-manifest','entry-meta','ct-breadcrumbs']}}
 page_xpath = [('https://hiddennumerology.com',"//main[@id='main']"),
-              ('https://www.adviseastro.com/',"//div[@class='inside-article']")]
+              ('https://www.adviseastro.com',"//div[@class='inside-article']"),
+              ('https://angelmanifest.com',"//div[@class='hero-section']|//div[@class='entry-content']")]
+ignore_tag_by_domain = {'https://angelmanifest.com': ['ul']}
 page_wise_delimeter = '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'
 para_wise_delim = '@@@@@@@@@@@@@@@@@@@'
-ignore_site_num = [2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+ignore_site_num = [1,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
 url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and-symbolism/"],
         '2':  ['https://angelmanifest.com/angel-number-@#$/'],
         '3':  ["https://angelnumber.me/@#$-meaning/"],
@@ -29,4 +32,4 @@ url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and
         '23': ["https://thesecretofthetarot.com/angel-number-@#$/"],
         '24': ["https://trustedpsychicmediums.com/angel-numbers/angel-number-@#$/"],}
 
-remove_code = {'https://hiddennumerology.com':['<h3>Read the meaning of the other Angel Numbers</h3>']}
+remove_code = {'https://hiddennumerology.com':['<h3>Read the meaning of the other Angel Numbers</h3>'],'https://angelmanifest.com':['<h3>Other Angel Numbers:</h3>','<p>Also read:</p>','<h2>Also Read:</h2>']}

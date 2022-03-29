@@ -50,9 +50,10 @@ def scrape_and_parse_data(url_patterns,angel_number):
                  html_data = ''.join(data_list)
                  html_data=remove_html_data(url,html_data)
                  if response.status_code == 200:
-                     parser = MYhtmlparser()
+                     parser = MYhtmlparser(url)
                      parser.feed(html_data)
                      temp_data = parser.document_content
+                     temp_data = remove_html_data(url, temp_data)
                      temp_data+= url+page_wise_delimeter
                      scrapped_data += temp_data
                      print(f'[{url}]-->Raw data added for angel number - {angel_number}')
@@ -61,10 +62,14 @@ def scrape_and_parse_data(url_patterns,angel_number):
          merge_scrapped_data(scrapped_data,angel_number)
          store_scrapped_data(scrapped_data,angel_number)
 
-
+def check_if_ignore_tag_by_domain(tag,url):
+   for domain,tags in ignore_tag_by_domain.items():
+       if url.startswith(domain) and tag in tags:
+           return True
+       else :
+           return False
 
 class MYhtmlparser(HTMLParser):
-
     document_content = ''
     p_open = False
     is_consecutive_h = False
@@ -72,19 +77,27 @@ class MYhtmlparser(HTMLParser):
     current_tag_to_remove = None
     count_removing_tag = 0
 
-    def is_remove_element(self,tag,attrs):
+    def __init__(self,url):
+        self.url = url
+        super(MYhtmlparser, self).__init__()
+
+
+
+    def is_remove_element(self,tag,attrs,url):
 
         if self.ignore_content and tag == self.current_tag_to_remove:
                 self.count_removing_tag += 1
         if not self.ignore_content :
             for attr,value in attrs:
-                for attr1,value1 in remove_attribute:
-                    if attr == attr1 and (value in value1):
-                        self.current_tag_to_remove=tag
-                        self.count_removing_tag=1
-                        self.ignore_content = True
-                        return
-            if tag == 'script' :
+                for domain,values in remove_attribute.items():
+                    if url.startswith(domain):
+                        for attr1,value1 in values.items():
+                            if attr == attr1 and (value in value1):
+                                self.current_tag_to_remove=tag
+                                self.count_removing_tag=1
+                                self.ignore_content = True
+                                return
+            if tag == 'script' or check_if_ignore_tag_by_domain(tag,self.url):
                 self.current_tag_to_remove = tag
                 self.count_removing_tag += 1
                 self.ignore_content = True
@@ -99,7 +112,7 @@ class MYhtmlparser(HTMLParser):
 
     def handle_starttag(self, tag, attrs):
 
-        self.is_remove_element(tag, attrs)
+        self.is_remove_element(tag, attrs,self.url)
         if not self.ignore_content:
             if tag in ['h1','h2','h3','h4','h5','h6'] :
                 if self.is_consecutive_h:
@@ -135,4 +148,4 @@ if not os.path.exists('Angel_number_html'):
 
 if not os.path.exists('Angel_number_txt'):
   os.mkdir('Angel_number_txt')
-scrape_and_parse_data(url_patterns,1111)
+scrape_and_parse_data(url_patterns,666)
