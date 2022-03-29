@@ -8,18 +8,23 @@ def FindMaxLength(lst):
     return  maxLength
 
 def merge_scrapped_data(text,angel_number):
+    data = ''
     url_wise_content = text.split(page_wise_delimeter)[:-1]
     merger = []
+    url_site = []
     for url_content in url_wise_content:
-        merger.append(url_content.split(para_wise_delim))
+        para_wise_content = url_content.split(para_wise_delim)[:-1]
+        url_site.append(url_content.split(para_wise_delim)[-1])
+        merger.append(para_wise_content)
     maxLength = FindMaxLength(merger)
     for i in range(maxLength):
         for j in range(len(merger)):
             if len(merger[j]) > 0:
-                data = merger[j][0]
-                merger[j].remove(data)
-                with open('Angel_number_html/' + str(angel_number) + '.html', 'a') as f:
-                    f.write(data)
+                temp_data =  merger[j][0]
+                merger[j].remove(temp_data)
+                data = data + '<a href = ' +  url_site[j] + '>' + url_site[j] + '</a>' + temp_data
+    with open('Angel_number_html/' + str(angel_number) + '.html', 'w') as f:
+        f.write(data)
     shutil.copyfile('Angel_number_html/' + str(angel_number) + '.html', 'Angel_number_txt/' + str(angel_number) + '.txt')
 
 
