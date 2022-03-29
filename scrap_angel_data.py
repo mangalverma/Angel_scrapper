@@ -35,7 +35,7 @@ def scrape_and_parse_data(url_patterns,angel_number):
        if int(site_num) not in ignore_site_num:
          for pattern in patterns:
              url = pattern.replace('@#$', str(angel_number))
-             response = requests.get(url,headers={"User-Agent": ""})
+             response = requests.get(url,headers={"User-Agent": UA})
              if response.status_code !=200:
                  print(f"{url} NOT FOUND -{ response.status_code}")
                  continue
@@ -53,12 +53,13 @@ def scrape_and_parse_data(url_patterns,angel_number):
                      parser = MYhtmlparser()
                      parser.feed(html_data)
                      temp_data = parser.document_content
-                     temp_data+= page_wise_delimeter
+                     temp_data+= url+page_wise_delimeter
                      scrapped_data += temp_data
                      print(f'[{url}]-->Raw data added for angel number - {angel_number}')
                  break
     if scrapped_data:
          merge_scrapped_data(scrapped_data,angel_number)
+         store_scrapped_data(scrapped_data,angel_number)
 
 
 
