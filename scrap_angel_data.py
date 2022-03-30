@@ -63,11 +63,10 @@ def scrape_and_parse_data(url_patterns,angel_number):
          store_scrapped_data(scrapped_data,angel_number)
 
 def check_if_ignore_tag_by_domain(tag,url):
-   for domain,tags in ignore_tag_by_domain.items():
-       if url.startswith(domain) and tag in tags:
+    for domain,tags in ignore_tag_by_domain.items():
+        if url.startswith(domain) and tag in tags:
            return True
-       else :
-           return False
+    return False
 
 class MYhtmlparser(HTMLParser):
     document_content = ''
@@ -84,7 +83,7 @@ class MYhtmlparser(HTMLParser):
 
 
     def is_remove_element(self,tag,attrs,url):
-
+        ignorable_tags = ['script','style','img']
         if self.ignore_content and tag == self.current_tag_to_remove:
                 self.count_removing_tag += 1
         if not self.ignore_content :
@@ -97,7 +96,7 @@ class MYhtmlparser(HTMLParser):
                                 self.count_removing_tag=1
                                 self.ignore_content = True
                                 return
-            if tag == 'script' or check_if_ignore_tag_by_domain(tag,self.url):
+            if tag in ignorable_tags or check_if_ignore_tag_by_domain(tag,self.url):
                 self.current_tag_to_remove = tag
                 self.count_removing_tag += 1
                 self.ignore_content = True
@@ -148,4 +147,4 @@ if not os.path.exists('Angel_number_html'):
 
 if not os.path.exists('Angel_number_txt'):
   os.mkdir('Angel_number_txt')
-scrape_and_parse_data(url_patterns,666)
+scrape_and_parse_data(url_patterns,1144)
