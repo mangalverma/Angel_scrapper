@@ -5,15 +5,15 @@ remove_attribute = {'https://angelnumber.org': {'id': ['M381992ScriptRootC303780
                     'https://divineangelnumbers.com/':{'id':['comments', 'grow-me-in-content-recs-root'],'class': ['uagb-toc__wrap', 'entry-category-icon', 'entry-meta clear', 'social-share-icons', 'has-background','author-box clear', 'entry-related clear', 'wp-block-image']},
                     'https://www.guardian-angel-reading.com/': {'id': ['share'],'class': ['related-articles fixedfont','homeform homeform--og ', 'byline author vcard']},
                     'https://hiddennumerology.com/': {'id': ['ez-toc-container', 'dpsp-content-bottom', 'grow-me-in-content-recs-root'], 'class':['purplebox','pinkbox','yellowbox', 'emalsubinpt', 'saboxplugin-tab', 'dpsp-share-text ', 'navigation post-navigation']}}
-page_xpath = [('https://hiddennumerology.com',"//main[@id='main']"),
-              ('https://www.adviseastro.com',"//div[@class='inside-article']"),
-              ('https://angelmanifest.com',"//div[@class='hero-section']|//div[@class='entry-content']"),
-              ('https://angelnumber.org/', '//*[@id="main"]'),
-              ('https://angelnumbersmeaning.com//', '//*[@id="main"]'),
-              ('https://www.angelsnumbers.com/', '//*[@id="content_area"]'),
-              ('https://www.coolastro.com/','//*[@id="primary"]'),
-              ('https://divineangelnumbers.com/','//*[@id="main"]'),
-              ('https://www.guardian-angel-reading.com/','//*[@id="sticky-anchor"]/div/main')]
+page_xpath = [('https://hiddennumerology.com',"//main[@id='main']"), #10
+              ('https://www.adviseastro.com',"//div[@class='inside-article']"), #1
+              ('https://angelmanifest.com',"//div[@class='hero-section']|//div[@class='entry-content']"), #2
+              ('https://angelnumber.org/', '//*[@id="main"]'), #4
+              ('https://angelnumbersmeaning.com//', '//*[@id="main"]'),#5
+              ('https://www.angelsnumbers.com/', '//*[@id="content_area"]'), #6
+              ('https://www.coolastro.com/','//*[@id="primary"]'), #7
+              ('https://divineangelnumbers.com/','//*[@id="main"]'), #8
+              ('https://www.guardian-angel-reading.com/','//*[@id="sticky-anchor"]/div/main')] #9
 ignore_tag_by_domain = {'https://angelmanifest.com': ['ul']}
 page_wise_delimeter = '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'
 para_wise_delim = '@@@@@@@@@@@@@@@@@@@'
