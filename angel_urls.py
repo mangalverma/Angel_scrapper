@@ -12,6 +12,12 @@ remove_attribute = {'https://angelnumber.org': {'id': ['M381992ScriptRootC303780
                     'https://www.mindbodygreen.com/' : {'class':['subcategory-label c-dark-purple ', 'editor-info__text', 'article-subnavigation', 'ad__callout container', 'article-header__share-like article-header__share-like--standard  article-header__share-like--p2', 'article-image article-image--p1 article-image--hero article-image--hero-standard ', 'article-affiliate-disclaimer', 'article-date article-date--standard', 'article-header__share-like-wrapper', 'article-header__share-like-wrapper article-header__share-like-wrapper--alt']},
                     'https://www.mindfulnessandjustice.org/' : {'class':['saboxplugin-wrap', 'entry-meta', 'InlineRecs___StyledDiv3-sc-7gga64-8 kMYAEH', 'code-block code-block-1']},
                     'https://trustedpsychicmediums.com':{'class':['entry-meta','irp','entry-author author-bottom','tag-cloud','entry-related-posts'],'itemprop':['articleSection'],'id':['toc_container','respond','entry-actions','entry-related-posts']}, #24
+                    'https://numerologycolumn.com/' : {'id':['toc_container'],'class':['code-block code-block-1','author-card', 'recent-articles-container', 'entry-meta sr-only'],'href':["https://numerologist.com/anf-mesl/denpet"]}, #17
+                    'https://numerologynation.com/' : {'id':['toc_container'],'class':['ck_form', 'entry-meta', 'rank-math-breadcrumb']},
+                    'https://numerologysign.com/' : {'id':['mv-trellis-comments'],'class':['article-meta post-meta-wrapper post-meta-single post-meta-single-top', 'su-button-center', 'ShadowDomContainer___StyledDiv-paiu0k-0', 'entry-footer', 'navigation post-navigation']},
+                    'https://www.psychnewsdaily.com/' : {'class':['author-box ct-hidden-sm', 'simpletoc-title', 'adthrive-player-title']},
+                    'https://www.ryanhart.org/' : {'class':['post-comments', 'center w-100 br3 hidden ba b--grey-3 mv4', 'mw7 center', 'mw7 mv4 center sans-serif tc', 'f7 grey-3 sans-serif', 'f7 flex justify-between grey-3 sans-serif']},
+                    'http://sacredscribesangelnumbers.blogspot.com' : {'class':['post-footer', 'MsoNormal'], 'href': ['https://www.etsy.com/au/shop/JoWPottery','http://numerology-thenumbersandtheirmeanings.blogspot.com/', 'http://www.facebook.com/JoWPottery/', 'http://sacredscribes.blogspot.com.au/p/about-joanne-sacred-scribes.html', 'http://sacredscribes.blogspot.com.au/2016/10/joanne-sacred-scribes-websites-blogs.html']},
                     }
 
 page_xpath = [('https://hiddennumerology.com',"//main[@id='main']"),  #10
@@ -28,14 +34,21 @@ page_xpath = [('https://hiddennumerology.com',"//main[@id='main']"),  #10
               ('https://joynumber.com/', '//*[@id="gatsby-focus-wrapper"]/div[2]/div[1]'), # 12
               ("https://mattbeech.com/",'//*[@class="container"]'), #13
               ("https://www.mindbodygreen.com/",'//*[@class="main-content__article-body"]'), #14
-              ("https://www.mindfulnessandjustice.org/",'//*[@id="main"]'),
+              ("https://www.mindfulnessandjustice.org/",'//*[@id="main"]'), #15
               ('https://trustedpsychicmediums.com',"//main[@id= 'main']"),
-              ('https://www.mindyourbodysoul.com',"//main[@id='content']")
+              ('https://www.mindyourbodysoul.com',"//main[@id='content']"),
+              ('https://numerologycolumn.com/',"//main[@id= 'main']"), #25
+              ('https://numerologynation.com/',"//div[@class= 'inside-article']"), #17
+              ('https://numerologysign.com/',"//*[@id='content']"), #18
+              ('https://www.psychnewsdaily.com/','//*[@id="main"]'), #19
+              ('https://www.ryanhart.org/','//*[@class="fl mw6 ph2 pv2 cms"]'),
+              ('http://sacredscribesangelnumbers.blogspot.com','//*[@class="post hentry uncustomized-post-template"]'),
               ]
-ignore_tag_by_domain = {'https://angelmanifest.com': ['ul']}
+ignore_tag_by_domain = {'https://angelmanifest.com': ['ul'],
+                        'https://www.psychnewsdaily.com': ['ul']}
 page_wise_delimeter = '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'
 para_wise_delim = '@@@@@@@@@@@@@@@@@@@'
-ignore_site_num = [1,2,3,4,5,6,7,8,9,10,11,13,12,14,16,17,18,19,20,21,22,23,24]
+ignore_site_num = [1,2,3,4,5,6,7,8,9,10,11,13,12,14,15,16,17,18,19,20,22,23,24,25]
 url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and-symbolism/"],
         '2':  ['https://angelmanifest.com/angel-number-@#$/'],
         '3':  ["https://angelnumber.me/@#$-meaning/"],    #no remove attribute need to add for this page
@@ -50,18 +63,21 @@ url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and
         '12': ["https://joynumber.com/@#$-angel-number/","https://joynumber.com/angel-number-@#$/","https://joynumber.com/@#$-angel-number-meaning/"],
         '13': ["https://mattbeech.com/repeating-numbers/@#$-meaning/"],
         '14': ["https://www.mindbodygreen.com/articles/@#$-angel-number-meaning", "https://www.mindbodygreen.com/articles/@#$-angel-number"],
-        '15': ["https://www.mindfulnessandjustice.org/angel-number-@#$/","https://www.mindfulnessandjustice.org/angel-number-@#$-meaning/"],
+        '15': ["https://www.mindfulnessandjustice.org/angel-number-@#$-meaning/","https://www.mindfulnessandjustice.org/angel-number-@#$/"],
         '16': ["https://www.mindyourbodysoul.com/@#$-angel-number/","https://www.mindyourbodysoul.com/angel-number-@#$/"],
         '17': ["https://numerologynation.com/@#$-angel-number/","https://numerologynation.com/angel-number-@#$/"],
         '18': ["https://numerologysign.com/angel-number-@#$-meanings/"],
-        '19': ["https://www.psychnewsdaily.com/@#$-angel-number-meaning/"],
+        '19': ["https://www.psychnewsdaily.com/@#$-angel-number-meaning/"], #manual csv
         '20': ["https://www.ryanhart.org/angel-number-@#$-meaning/"],
         '21': ["http://sacredscribesangelnumbers.blogspot.com/2019/01/angel-number-@#$.html","http://sacredscribesangelnumbers.blogspot.com/2018/12/angel-number-@#$.html","http://sacredscribesangelnumbers.blogspot.com/2018/05/angel-number-@#$.html","http://sacredscribesangelnumbers.blogspot.com/2018/04/angel-number-@#$.html"],
         '22': ["https://takanta.com/@#$-angel-number","https://takanta.com/angel-number-@#$"],
         '23': ["https://thesecretofthetarot.com/angel-number-@#$/"],
-        '24': ["https://trustedpsychicmediums.com/angel-numbers/angel-number-@#$/"],}
+        '24': ["https://trustedpsychicmediums.com/angel-numbers/angel-number-@#$/"],
+        '25': ["https://numerologycolumn.com/@#$-angel-number/","https://numerologycolumn.com/angel-number-@#$-numerology-meaning/","https://numerologycolumn.com/angel-number-@#$/"]}
 
 remove_code = {'https://hiddennumerology.com':['<h3>Read the meaning of the other Angel Numbers</h3>'],
                'https://angelmanifest.com':['<h3>Other Angel Numbers:</h3>','<p>Also read:</p>','<h2>Also Read:</h2>'],
+               'https://numerologycolumn.com/':['<h3 class="h2">Recent Posts</h3>']
                }
-default_redirected = {'www.mindyourbodysoul.com':'https://www.mindyourbodysoul.com'}
+default_redirected = {'www.mindyourbodysoul.com':'https://www.mindyourbodysoul.com',
+                      'www.psychnewsdaily.com': 'https://www.psychnewsdaily.com'}

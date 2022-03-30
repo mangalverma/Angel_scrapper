@@ -156,4 +156,4 @@ if not os.path.exists('Angel_number_html'):
 
 if not os.path.exists('Angel_number_txt'):
   os.mkdir('Angel_number_txt')
-scrape_and_parse_data(url_patterns,1144)
+scrape_and_parse_data(url_patterns,3361)
