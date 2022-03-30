@@ -19,7 +19,8 @@ page_xpath = [('https://hiddennumerology.com',"//main[@id='main']"), #10
               ('https://divineangelnumbers.com/','//*[@id="main"]'), #8
               ('https://www.guardian-angel-reading.com/','//*[@id="sticky-anchor"]/div/main'), #9
               ('https://angelnumber.me','//div[@class="ast-post-format- single-layout-1 ast-no-date-box"]'), #3
-              ('https://trustedpsychicmediums.com',"//main[@id= 'main']")] #24
+              ('https://trustedpsychicmediums.com',"//main[@id= 'main']"),
+              ('https://www.mindyourbodysoul.com',"//main[@id='content']")] #24
 ignore_tag_by_domain = {'https://angelmanifest.com': ['ul']}
 page_wise_delimeter = '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'
 para_wise_delim = '@@@@@@@@@@@@@@@@@@@'
@@ -52,4 +53,4 @@ url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and
 remove_code = {'https://hiddennumerology.com':['<h3>Read the meaning of the other Angel Numbers</h3>'],
                'https://angelmanifest.com':['<h3>Other Angel Numbers:</h3>','<p>Also read:</p>','<h2>Also Read:</h2>'],
                }
-default_redirected = {16:'https://www.mindyourbodysoul.com'}
+default_redirected = {'www.mindyourbodysoul.com':'https://www.mindyourbodysoul.com'}

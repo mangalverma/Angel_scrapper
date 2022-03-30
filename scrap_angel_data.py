@@ -5,6 +5,8 @@ from lxml import etree
 from unicodedata import  normalize
 import os
 from html_content_merger import *
+from urllib. parse import urlparse
+
 
 UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.80 Safari/537.36'
 def get_xpath(url):
@@ -42,7 +44,8 @@ def scrape_and_parse_data(url_patterns,angel_number):
              else:
                  if response.url!= url:
                      print(f'url redirect to {response.url}')
-                     if response.url == default_redirected[angel_number]:
+                     domain = urlparse(url).netloc
+                     if response.url == default_redirected.get(domain):
                          print(f"skipping {url} because it is redirecting to homepage/default urls")
                          continue
                      url =response.url
