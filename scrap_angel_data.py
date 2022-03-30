@@ -40,6 +40,12 @@ def scrape_and_parse_data(url_patterns,angel_number):
                  print(f"{url} NOT FOUND -{ response.status_code}")
                  continue
              else:
+                 if response.url!= url:
+                     print(f'url redirect to {response.url}')
+                     if response.url == default_redirected[angel_number]:
+                         print(f"skipping {url} because it is redirecting to homepage/default urls")
+                         continue
+                     url =response.url
                  xpath = get_xpath(url)
                  tree = etree.HTML(response.content)
                  encoded_data = tree.xpath(xpath)
