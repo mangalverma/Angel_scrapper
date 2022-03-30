@@ -18,6 +18,8 @@ remove_attribute = {'https://angelnumber.org': {'id': ['M381992ScriptRootC303780
                     'https://www.psychnewsdaily.com/' : {'class':['author-box ct-hidden-sm', 'simpletoc-title', 'adthrive-player-title']},
                     'https://www.ryanhart.org/' : {'class':['post-comments', 'center w-100 br3 hidden ba b--grey-3 mv4', 'mw7 center', 'mw7 mv4 center sans-serif tc', 'f7 grey-3 sans-serif', 'f7 flex justify-between grey-3 sans-serif']},
                     'http://sacredscribesangelnumbers.blogspot.com' : {'class':['post-footer', 'MsoNormal'], 'href': ['https://www.etsy.com/au/shop/JoWPottery','http://numerology-thenumbersandtheirmeanings.blogspot.com/', 'http://www.facebook.com/JoWPottery/', 'http://sacredscribes.blogspot.com.au/p/about-joanne-sacred-scribes.html', 'http://sacredscribes.blogspot.com.au/2016/10/joanne-sacred-scribes-websites-blogs.html']},
+                    'https://numeroscop.net/': {'class':['header', 'n-square', 'angel-realted-posts']},
+                    'https://researchmaniacs.com/': {'id': ['177976545'],'class':['header', 'n-square', 'angel-realted-posts']},
                     }
 
 page_xpath = [('https://hiddennumerology.com',"//main[@id='main']"),  #10
@@ -43,12 +45,16 @@ page_xpath = [('https://hiddennumerology.com',"//main[@id='main']"),  #10
               ('https://www.psychnewsdaily.com/','//*[@id="main"]'), #19
               ('https://www.ryanhart.org/','//*[@class="fl mw6 ph2 pv2 cms"]'),
               ('http://sacredscribesangelnumbers.blogspot.com','//*[@class="post hentry uncustomized-post-template"]'),
+              ('https://numeroscop.net/','//div[@class= "container body"]'),
+              ('https://researchmaniacs.com/','//div[@class= "title" ] | //div[@class= "content"]'),
               ]
 ignore_tag_by_domain = {'https://angelmanifest.com': ['ul'],
-                        'https://www.psychnewsdaily.com': ['ul']}
+                        'https://www.psychnewsdaily.com': ['ul'],
+                        'https://numeroscop.net/': ['nav', 'aside'],
+                        'https://researchmaniacs.com/': ['font']}
 page_wise_delimeter = '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'
 para_wise_delim = '@@@@@@@@@@@@@@@@@@@'
-ignore_site_num = [1,2,3,4,5,6,7,8,9,10,11,13,12,14,15,16,17,18,19,20,22,23,24,25]
+ignore_site_num = [1,2,3,4,5,6,7,8,9,10,11,13,12,14,15,16,17,18,19,20,21,22,23,24,25,26]
 url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and-symbolism/"],
         '2':  ['https://angelmanifest.com/angel-number-@#$/'],
         '3':  ["https://angelnumber.me/@#$-meaning/"],    #no remove attribute need to add for this page
@@ -73,11 +79,23 @@ url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and
         '22': ["https://takanta.com/@#$-angel-number","https://takanta.com/angel-number-@#$"],
         '23': ["https://thesecretofthetarot.com/angel-number-@#$/"],
         '24': ["https://trustedpsychicmediums.com/angel-numbers/angel-number-@#$/"],
-        '25': ["https://numerologycolumn.com/@#$-angel-number/","https://numerologycolumn.com/angel-number-@#$-numerology-meaning/","https://numerologycolumn.com/angel-number-@#$/"]}
+        '25': ["https://numerologycolumn.com/@#$-angel-number/","https://numerologycolumn.com/angel-number-@#$-numerology-meaning/","https://numerologycolumn.com/angel-number-@#$/"],
+        '26': ["https://numeroscop.net/angel-numbers/@#$-angel-number.html"],
+        '27': ["https://researchmaniacs.com/Numerology/Angel-Numbers/Angel-Number-@#$.html"]}
 
-remove_code = {'https://hiddennumerology.com':['<h3>Read the meaning of the other Angel Numbers</h3>'],
-               'https://angelmanifest.com':['<h3>Other Angel Numbers:</h3>','<p>Also read:</p>','<h2>Also Read:</h2>'],
-               'https://numerologycolumn.com/':['<h3 class="h2">Recent Posts</h3>']
+remove_code = {'https://hiddennumerology.com':[{'orig':'<h3>Read the meaning of the other Angel Numbers</h3>', 'new':''}],
+               'https://angelmanifest.com':[{'orig': '<h3>Other Angel Numbers:</h3>','new':''},
+                                            {'orig': '<p>Also read:</p>','new': ''},
+                                            {'orig': '<h2>Also Read:</h2>', 'new':''}],
+               'https://numerologycolumn.com/':[{'orig':'<h3 class="h2">Recent Posts</h3>', 'new': ''}],
+               'http://sacredscribesangelnumbers.blogspot.com': [{'orig':'<span ', 'new': '<p '},
+                                                                 {'orig':'</span', 'new': '</p '}],
+               'https://numerologycolumn.com/':[{'orig':'<h2>Related posts</h2>', 'new': ''}],
+               'https://researchmaniacs.com/':[{'orig': '<br/><br/>','new':'</p><p>'},
+                                            {'orig': '</br>','new': '<p>'},
+                                            {'orig': '<b>', 'new':'<h4>'},
+                                            {'orig': '</b>', 'new':'</h4>'}],
                }
 default_redirected = {'www.mindyourbodysoul.com':'https://www.mindyourbodysoul.com',
-                      'www.psychnewsdaily.com': 'https://www.psychnewsdaily.com'}
+                      'www.psychnewsdaily.com': 'https://www.psychnewsdaily.com',
+                      'joynumber.com': 'https://joynumber.com'}

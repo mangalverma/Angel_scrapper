@@ -23,11 +23,12 @@ def store_scrapped_data(data,angel_number):
         f.write(data)
         print(f'Raw data Created for angel number - {angel_number}')
 
+
 def remove_html_data(url,html_data):
-    for domain_name,rmv_code in remove_code.items():
+    for domain_name,rplc_code in remove_code.items():
         if url.startswith(domain_name):
-            for code in rmv_code:
-               html_data = html_data.replace(code,'')
+            for code in rplc_code:
+               html_data = html_data.replace(code['orig'],code['new'])
     return html_data
 
 def scrape_and_parse_data(url_patterns,angel_number):
@@ -156,4 +157,7 @@ if not os.path.exists('Angel_number_html'):
 
 if not os.path.exists('Angel_number_txt'):
   os.mkdir('Angel_number_txt')
-scrape_and_parse_data(url_patterns,3361)
+scrape_and_parse_data(url_patterns,16)
+
+
+#ipublishing, mindfuljustice
