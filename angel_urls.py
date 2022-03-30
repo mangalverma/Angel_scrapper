@@ -1,11 +1,12 @@
-remove_attribute = {'https://angelnumber.org': {'id': ['M381992ScriptRootC303780'],'class': ['hm-related-posts','cat-links']},
-                    'https://angelmanifest.com': {'class': ['wp-block-embed is-type-wp-embed is-provider-angel-manifest wp-block-embed-angel-manifest','entry-meta','ct-breadcrumbs']},
-                    'https://www.angelsnumbers.com/':{'id': ['le_body_row_8'], 'class': ['op-custom-html-block','breadcrumb-style-7']},
-                    'https://www.coolastro.com/':{'id': ['comments','ez-toc-container'], 'class': ['entry-meta','relpost-thumb-wrapper']},
-                    'https://divineangelnumbers.com/':{'id':['comments', 'grow-me-in-content-recs-root'],'class': ['uagb-toc__wrap', 'entry-category-icon', 'entry-meta clear', 'social-share-icons', 'has-background','author-box clear', 'entry-related clear', 'wp-block-image']},
-                    'https://www.guardian-angel-reading.com/': {'id': ['share'],'class': ['related-articles fixedfont','homeform homeform--og ', 'byline author vcard']},
-                    'https://hiddennumerology.com/': {'id': ['ez-toc-container', 'dpsp-content-bottom', 'grow-me-in-content-recs-root'], 'class':['purplebox','pinkbox','yellowbox', 'emalsubinpt', 'saboxplugin-tab', 'dpsp-share-text ', 'navigation post-navigation']},
-                    'https://www.adviseastro.com' : {'id':['ez-toc-container'],'class':['entry-meta']}
+remove_attribute = {'https://angelnumber.org': {'id': ['M381992ScriptRootC303780'],'class': ['hm-related-posts','cat-links']}, #4
+                    'https://angelmanifest.com': {'class': ['wp-block-embed is-type-wp-embed is-provider-angel-manifest wp-block-embed-angel-manifest','entry-meta','ct-breadcrumbs']}, #2
+                    'https://www.angelsnumbers.com/':{'id': ['le_body_row_8'], 'class': ['op-custom-html-block','breadcrumb-style-7']}, #6
+                    'https://www.coolastro.com/':{'id': ['comments','ez-toc-container'], 'class': ['entry-meta','relpost-thumb-wrapper']}, #7
+                    'https://divineangelnumbers.com/':{'id':['comments', 'grow-me-in-content-recs-root'],'class': ['uagb-toc__wrap', 'entry-category-icon', 'entry-meta clear', 'social-share-icons', 'has-background','author-box clear', 'entry-related clear', 'wp-block-image']}, #8
+                    'https://www.guardian-angel-reading.com/': {'id': ['share'],'class': ['related-articles fixedfont','homeform homeform--og ', 'byline author vcard']}, #9
+                    'https://hiddennumerology.com/': {'id': ['ez-toc-container', 'dpsp-content-bottom', 'grow-me-in-content-recs-root'], 'class':['purplebox','pinkbox','yellowbox', 'emalsubinpt', 'saboxplugin-tab', 'dpsp-share-text ', 'navigation post-navigation']}, #10
+                    'https://www.adviseastro.com' : {'id':['ez-toc-container'],'class':['entry-meta']} ,#1
+                    'https://trustedpsychicmediums.com':{'class':['entry-meta','irp','entry-author author-bottom','tag-cloud','entry-related-posts'],'itemprop':['articleSection'],'id':['toc_container','respond','entry-actions','entry-related-posts']}, #24
                     }
 
 page_xpath = [('https://hiddennumerology.com',"//main[@id='main']"), #10
@@ -16,15 +17,16 @@ page_xpath = [('https://hiddennumerology.com',"//main[@id='main']"), #10
               ('https://www.angelsnumbers.com/', '//*[@id="content_area"]'), #6
               ('https://www.coolastro.com/','//*[@id="primary"]'), #7
               ('https://divineangelnumbers.com/','//*[@id="main"]'), #8
-              ('https://www.guardian-angel-reading.com/','//*[@id="sticky-anchor"]/div/main'),
-              ('https://angelnumber.me','//div[@class="ast-post-format- single-layout-1 ast-no-date-box"]')] #3
+              ('https://www.guardian-angel-reading.com/','//*[@id="sticky-anchor"]/div/main'), #9
+              ('https://angelnumber.me','//div[@class="ast-post-format- single-layout-1 ast-no-date-box"]'), #3
+              ('https://trustedpsychicmediums.com',"//main[@id= 'main']")] #24
 ignore_tag_by_domain = {'https://angelmanifest.com': ['ul']}
 page_wise_delimeter = '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'
 para_wise_delim = '@@@@@@@@@@@@@@@@@@@'
-ignore_site_num = [1,2,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24]
+ignore_site_num = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]
 url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and-symbolism/"],
         '2':  ['https://angelmanifest.com/angel-number-@#$/'],
-        '3':  ["https://angelnumber.me/@#$-meaning/"],
+        '3':  ["https://angelnumber.me/@#$-meaning/"],    #no remove attribute need to add for this page
         '4':  ["https://angelnumber.org/@#$-angel-number/","https://angelnumber.org/@#$-angel-number-meaning-and-symbolism/"],
         '5':  ["https://angelnumbersmeaning.com/@#$-angel-number/","https://angelnumbersmeaning.com/angel-number-@#$-meaning-and-symbolism/","https://angelnumbersmeaning.com/angel-number-@#$/"],
         '6':  ["https://www.angelsnumbers.com/meaning/number-@#$/"],
@@ -49,4 +51,4 @@ url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and
 
 remove_code = {'https://hiddennumerology.com':['<h3>Read the meaning of the other Angel Numbers</h3>'],
                'https://angelmanifest.com':['<h3>Other Angel Numbers:</h3>','<p>Also read:</p>','<h2>Also Read:</h2>'],
-               '':['<p>Read More :']}
+               }
