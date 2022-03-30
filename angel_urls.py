@@ -11,6 +11,7 @@ remove_attribute = {'https://angelnumber.org': {'id': ['M381992ScriptRootC303780
                     'https://mattbeech.com/' : {'id':['toc_container', 'single-comments'],'class':['breadcrumb']},  #need replace_code
                     'https://www.mindbodygreen.com/' : {'class':['subcategory-label c-dark-purple ', 'editor-info__text', 'article-subnavigation', 'ad__callout container', 'article-header__share-like article-header__share-like--standard  article-header__share-like--p2', 'article-image article-image--p1 article-image--hero article-image--hero-standard ', 'article-affiliate-disclaimer', 'article-date article-date--standard', 'article-header__share-like-wrapper', 'article-header__share-like-wrapper article-header__share-like-wrapper--alt']},
                     'https://www.mindfulnessandjustice.org/' : {'class':['saboxplugin-wrap', 'entry-meta', 'InlineRecs___StyledDiv3-sc-7gga64-8 kMYAEH', 'code-block code-block-1']},
+                    'https://trustedpsychicmediums.com':{'class':['entry-meta','irp','entry-author author-bottom','tag-cloud','entry-related-posts'],'itemprop':['articleSection'],'id':['toc_container','respond','entry-actions','entry-related-posts']}, #24
                     }
 
 page_xpath = [('https://hiddennumerology.com',"//main[@id='main']"),  #10
@@ -28,6 +29,8 @@ page_xpath = [('https://hiddennumerology.com',"//main[@id='main']"),  #10
               ("https://mattbeech.com/",'//*[@class="container"]'), #13
               ("https://www.mindbodygreen.com/",'//*[@class="main-content__article-body"]'), #14
               ("https://www.mindfulnessandjustice.org/",'//*[@id="main"]'),
+              ('https://trustedpsychicmediums.com',"//main[@id= 'main']"),
+              ('https://www.mindyourbodysoul.com',"//main[@id='content']")
               ]
 ignore_tag_by_domain = {'https://angelmanifest.com': ['ul']}
 page_wise_delimeter = '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'
@@ -35,7 +38,7 @@ para_wise_delim = '@@@@@@@@@@@@@@@@@@@'
 ignore_site_num = [1,2,3,4,5,6,7,8,9,10,11,13,12,14,16,17,18,19,20,21,22,23,24]
 url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and-symbolism/"],
         '2':  ['https://angelmanifest.com/angel-number-@#$/'],
-        '3':  ["https://angelnumber.me/@#$-meaning/"],
+        '3':  ["https://angelnumber.me/@#$-meaning/"],    #no remove attribute need to add for this page
         '4':  ["https://angelnumber.org/@#$-angel-number/","https://angelnumber.org/@#$-angel-number-meaning-and-symbolism/"],
         '5':  ["https://angelnumbersmeaning.com/@#$-angel-number/","https://angelnumbersmeaning.com/angel-number-@#$-meaning-and-symbolism/","https://angelnumbersmeaning.com/angel-number-@#$/"],
         '6':  ["https://www.angelsnumbers.com/meaning/number-@#$/"],
@@ -60,4 +63,5 @@ url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and
 
 remove_code = {'https://hiddennumerology.com':['<h3>Read the meaning of the other Angel Numbers</h3>'],
                'https://angelmanifest.com':['<h3>Other Angel Numbers:</h3>','<p>Also read:</p>','<h2>Also Read:</h2>'],
-               '':['<p>Read More :']}
+               }
+default_redirected = {'www.mindyourbodysoul.com':'https://www.mindyourbodysoul.com'}
