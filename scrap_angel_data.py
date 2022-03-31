@@ -7,6 +7,8 @@ import os
 from html_content_merger import *
 from urllib. parse import urlparse
 import pandas as pd
+from requests.adapters import HTTPAdapter
+from requests.packages.urllib3.util.retry import Retry
 
 
 UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.80 Safari/537.36'
@@ -29,7 +31,7 @@ def remove_html_data(url,html_data):
     for domain_name,rplc_code in remove_code.items():
         if url.startswith(domain_name):
             for code in rplc_code:
-               print(repr(html_data))
+               #print(repr(html_data))
                html_data = html_data.replace(code['orig'],code['new'])
     return html_data
 
@@ -49,7 +51,12 @@ def scrape_and_parse_data(url_patterns,angel_number):
                      continue
              else:
                 url = pattern.replace('@#$', str(angel_number))
-             response = requests.get(url,headers={"User-Agent": UA})
+             session = requests.Session()
+             retry = Retry(connect=3, backoff_factor=0.5)
+             adapter = HTTPAdapter(max_retries=retry)
+             session.mount('http://', adapter)
+             session.mount('https://', adapter)
+             response = session.get(url,headers={"User-Agent": UA})
              if response.status_code !=200:
                  print(f"{url} NOT FOUND -{ response.status_code}")
                  continue
@@ -57,7 +64,7 @@ def scrape_and_parse_data(url_patterns,angel_number):
                  if response.url!= url:
                      print(f'url redirect to {response.url}')
                      domain = urlparse(url).netloc
-                     redirected_angel_no = response.url[response.url.find(url[-2])+1:response.url.find(url[-2])+2]
+                     redirected_angel_no = response.url[response.url.rfind(url[-2])+1:response.url.rfind(url[-2])+2]
                      try:
                          if response.url == default_redirected.get(domain) or redirected_angel_no.isdigit():
                              print(f"skipping {url} because it is redirecting to homepage/wrong urls {response.url}")
@@ -173,7 +180,9 @@ if not os.path.exists('Angel_number_html'):
 
 if not os.path.exists('Angel_number_txt'):
   os.mkdir('Angel_number_txt')
-scrape_and_parse_data(url_patterns,111)
+
+for i in [11,22,33,44,55,66]:
+    scrape_and_parse_data(url_patterns,i)
 
 
 #ipublishing, mindfuljustice

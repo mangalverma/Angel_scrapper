@@ -1,6 +1,7 @@
 from angel_urls import *
 import os
 import shutil
+from random import shuffle
 
 
 def FindMaxLength(lst):
@@ -9,7 +10,8 @@ def FindMaxLength(lst):
 
 def merge_scrapped_data(text,angel_number):
     data = ''
-    url_wise_content = text.split(page_wise_delimeter)[:-1]
+    url_wise_content = text.split(page_wise_delimeter)
+    shuffle(url_wise_content)
     merger = []
     url_site = []
     for url_content in url_wise_content:
