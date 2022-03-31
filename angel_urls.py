@@ -20,6 +20,7 @@ remove_attribute = {'https://angelnumber.org': {'id': ['M381992ScriptRootC303780
                     'http://sacredscribesangelnumbers.blogspot.com' : {'class':['post-footer', 'MsoNormal'], 'href': ['https://www.etsy.com/au/shop/JoWPottery','http://numerology-thenumbersandtheirmeanings.blogspot.com/', 'http://www.facebook.com/JoWPottery/', 'http://sacredscribes.blogspot.com.au/p/about-joanne-sacred-scribes.html', 'http://sacredscribes.blogspot.com.au/2016/10/joanne-sacred-scribes-websites-blogs.html']},
                     'https://numeroscop.net/': {'class':['header', 'n-square', 'angel-realted-posts']},
                     'https://researchmaniacs.com/': {'id': ['177976545'],'class':['header', 'n-square', 'angel-realted-posts']},
+                    'https://www.sunsigns.org/': {'id':[''], 'class': ['single-post-video', 'post-meta', 'share-post']}
                     }
 
 page_xpath = [('https://hiddennumerology.com',"//main[@id='main']"),  #10
@@ -47,14 +48,16 @@ page_xpath = [('https://hiddennumerology.com',"//main[@id='main']"),  #10
               ('http://sacredscribesangelnumbers.blogspot.com','//*[@class="post hentry uncustomized-post-template"]'),
               ('https://numeroscop.net/','//div[@class= "container body"]'),
               ('https://researchmaniacs.com/','//div[@class= "title" ] | //div[@class= "content"]'),
+              ('https://www.sunsigns.org/','//*[@id="the-post"]')
               ]
 ignore_tag_by_domain = {'https://angelmanifest.com': ['ul'],
                         'https://www.psychnewsdaily.com': ['ul'],
-                        'https://numeroscop.net/': ['nav', 'aside'],
-                        'https://researchmaniacs.com/': ['font']}
+                        'https://numeroscop.net': ['nav', 'aside'],
+                        'https://researchmaniacs.com': ['font'],
+                        'https://www.sunsigns.org': ['ul', 'center', 'form']}
 page_wise_delimeter = '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'
 para_wise_delim = '@@@@@@@@@@@@@@@@@@@'
-ignore_site_num = [1,2,3,4,5,6,7,8,9,10,11,13,12,14,15,16,17,18,19,20,21,22,23,24,25,26]
+ignore_site_num = [1,2,3,4,5,6,7,8,9,10,11,13,12,14,15,16,17,18,19,20,21,22,23,24,25,26,27]
 url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and-symbolism/"],
         '2':  ['https://angelmanifest.com/angel-number-@#$/'],
         '3':  ["https://angelnumber.me/@#$-meaning/"],    #no remove attribute need to add for this page
@@ -81,7 +84,8 @@ url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and
         '24': ["https://trustedpsychicmediums.com/angel-numbers/angel-number-@#$/"],
         '25': ["https://numerologycolumn.com/@#$-angel-number/","https://numerologycolumn.com/angel-number-@#$-numerology-meaning/","https://numerologycolumn.com/angel-number-@#$/"],
         '26': ["https://numeroscop.net/angel-numbers/@#$-angel-number.html"],
-        '27': ["https://researchmaniacs.com/Numerology/Angel-Numbers/Angel-Number-@#$.html"]}
+        '27': ["https://researchmaniacs.com/Numerology/Angel-Numbers/Angel-Number-@#$.html"],
+        '28': ["https://www.sunsigns.org/angel-number-@#$-meaning/","https://www.sunsigns.org/angel-number-@#$"]}
 
 remove_code = {'https://hiddennumerology.com':[{'orig':'<h3>Read the meaning of the other Angel Numbers</h3>', 'new':''}],
                'https://angelmanifest.com':[{'orig': '<h3>Other Angel Numbers:</h3>','new':''},
@@ -95,6 +99,7 @@ remove_code = {'https://hiddennumerology.com':[{'orig':'<h3>Read the meaning of 
                                             {'orig': '</br>','new': '<p>'},
                                             {'orig': '<b>', 'new':'<h4>'},
                                             {'orig': '</b>', 'new':'</h4>'}],
+               'https://www.sunsigns.org': [{'orig': '<strong>See Also:</strong>','new':''}]
                }
 default_redirected = {'www.mindyourbodysoul.com':'https://www.mindyourbodysoul.com',
                       'www.psychnewsdaily.com': 'https://www.psychnewsdaily.com',
