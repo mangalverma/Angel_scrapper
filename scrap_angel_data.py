@@ -6,6 +6,7 @@ from unicodedata import  normalize
 import os
 from html_content_merger import *
 from urllib. parse import urlparse
+import pandas as pd
 
 
 UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.80 Safari/537.36'
@@ -28,6 +29,7 @@ def remove_html_data(url,html_data):
     for domain_name,rplc_code in remove_code.items():
         if url.startswith(domain_name):
             for code in rplc_code:
+               print(repr(html_data))
                html_data = html_data.replace(code['orig'],code['new'])
     return html_data
 
@@ -37,7 +39,16 @@ def scrape_and_parse_data(url_patterns,angel_number):
     for site_num,patterns in url_patterns.items():
        if int(site_num) not in ignore_site_num:
          for pattern in patterns:
-             url = pattern.replace('@#$', str(angel_number))
+             if '@#$' not in pattern:
+                 manual_csv_df = pd.read_csv('manual_csv/'+ pattern)
+                 url_series = manual_csv_df.loc[manual_csv_df['angel_number'] == angel_number, 'address']
+                 if not url_series.empty:
+                     url = url_series.iloc[0]
+                 else:
+                     print(pattern + ' did not contain angel number ' + str(angel_number))
+                     continue
+             else:
+                url = pattern.replace('@#$', str(angel_number))
              response = requests.get(url,headers={"User-Agent": UA})
              if response.status_code !=200:
                  print(f"{url} NOT FOUND -{ response.status_code}")
@@ -46,8 +57,13 @@ def scrape_and_parse_data(url_patterns,angel_number):
                  if response.url!= url:
                      print(f'url redirect to {response.url}')
                      domain = urlparse(url).netloc
-                     if response.url == default_redirected.get(domain):
-                         print(f"skipping {url} because it is redirecting to homepage/default urls")
+                     redirected_angel_no = response.url[response.url.find(url[-2])+1:response.url.find(url[-2])+2]
+                     try:
+                         if response.url == default_redirected.get(domain) or redirected_angel_no.isdigit():
+                             print(f"skipping {url} because it is redirecting to homepage/wrong urls {response.url}")
+                             continue
+                     except:
+                         print(f"skipping {url} because it is redirecting to homepage/wrong urls {response.url}")
                          continue
                      url =response.url
                  xpath = get_xpath(url)
@@ -93,7 +109,7 @@ class MYhtmlparser(HTMLParser):
 
 
     def is_remove_element(self,tag,attrs,url):
-        ignorable_tags = ['script','style','img']
+        ignorable_tags = ['script','style','img','noscript']
         if self.ignore_content and tag == self.current_tag_to_remove:
                 self.count_removing_tag += 1
         if not self.ignore_content :
@@ -157,7 +173,7 @@ if not os.path.exists('Angel_number_html'):
 
 if not os.path.exists('Angel_number_txt'):
   os.mkdir('Angel_number_txt')
-scrape_and_parse_data(url_patterns,16)
+scrape_and_parse_data(url_patterns,111)
 
 
 #ipublishing, mindfuljustice
