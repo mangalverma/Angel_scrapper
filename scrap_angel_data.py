@@ -87,7 +87,7 @@ def scrape_and_parse_data(url_patterns,angel_number):
                      parser.feed(html_data)
                      temp_data = parser.document_content
                      temp_data = remove_html_data(url, temp_data)
-                     temp_data+= url+page_wise_delimeter
+                     temp_data+= url+' site'+ site_num+ page_wise_delimeter
                      scrapped_data += temp_data
                      print(f'[{url}]-->Raw data added for angel number - {angel_number}')
                  break
@@ -181,7 +181,7 @@ if not os.path.exists('Angel_number_html'):
 if not os.path.exists('Angel_number_txt'):
   os.mkdir('Angel_number_txt')
 
-for i in [11,22,33,44,55,66]:
+for i in range(0,100):
     scrape_and_parse_data(url_patterns,i)
 
 

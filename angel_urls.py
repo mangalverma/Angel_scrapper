@@ -26,7 +26,9 @@ remove_attribute = {'https://angelnumber.org': {'id': ['M381992ScriptRootC303780
                     'https://www.yummymummykitchen.com/': {'id': ['dpsp-content-top','dpsp-content-bottom','grow-me-inline-subscribe-cta-root-0'], 'class': ['post-meta post-date', 'post-meta', 'post-meta meta-centered'], 'href': ['http://amazon.com/Angel-Numbers-101-Meaning-Sequences/dp/1401920012','http://amazon.com/gp/product/1788173473']},
                     'https://www.thepubliclive.com/': {'class': ['head angel-number', 'post-bottom clear-block', 'story-fb-twitter clear-block']},
                     'https://angelnumbersmeaning.com': {'id': ['M319879ScriptRootC214660_03376'],'class':['ezoic-ad nativedouble-1 nativedouble-1110 adtester-container adtester-container-110', 'relpost-thumb-wrapper', 'ez-report-ad-button','meta-category']},
-                    'https://thesecretofthetarot.com/': {'id': ['ez-toc-container'], 'class': ['entry-header', 'p1', 'rp4wp-related-posts']}
+                    'https://thesecretofthetarot.com/': {'id': ['ez-toc-container'], 'class': ['entry-header', 'p1', 'rp4wp-related-posts']},
+                    'https://takanta.com/': {'id':['ez-toc-container'],'class': ['entry-meta']},
+                    'https://angelnumber.me': {'id':['toc_container'], 'class': ['ast-breadcrumbs-wrapper']}
                     }
 
 page_xpath = [('https://hiddennumerology.com',"//main[@id='main']"),  #10
@@ -38,7 +40,7 @@ page_xpath = [('https://hiddennumerology.com',"//main[@id='main']"),  #10
               ('https://www.coolastro.com/','//*[@id="primary"]'),  #7
               ('https://divineangelnumbers.com/','//*[@id="main"]'),  #8
               ('https://www.guardian-angel-reading.com/','//*[@id="sticky-anchor"]/div/main'),
-              ('https://angelnumber.me','//div[@class="ast-post-format- single-layout-1 ast-no-date-box"]'),  #3
+              ('https://angelnumber.me','//*[@id="primary"]'),  #3
               ('https://www.ipublishing.co.in/','//*[@class="inside-article"]'),  #11
               ('https://joynumber.com/', '//*[@id="gatsby-focus-wrapper"]/div[2]/div[1]'), # 12
               ("https://mattbeech.com/",'//*[@class="container"]'), #13
@@ -52,13 +54,14 @@ page_xpath = [('https://hiddennumerology.com',"//main[@id='main']"),  #10
               ('https://www.psychnewsdaily.com/','//*[@id="main"]'), #19
               ('https://www.ryanhart.org/','//*[@class="fl mw6 ph2 pv2 cms"]'),
               ('http://sacredscribesangelnumbers.blogspot.com','//*[@class="post hentry uncustomized-post-template"]'),
-              ('https://numeroscop.net/','//div[@class= "container body"]'),
+              ('https://numeroscop.net/','//main[@class= "container body"]'),
               ('https://researchmaniacs.com/','//div[@class= "title" ] | //div[@class= "content"]'),
               ('https://www.sunsigns.org/','//*[@id="the-post"]'),
               ('https://willowsoul.com/','//*[@id="shopify-section-article-template"]'),
               ('https://www.yummymummykitchen.com/', '//*[@id="content"]/article'),
               ('https://www.thepubliclive.com/','//*[@class="container bdr m-pad-t-0 clear-block"]'),
-              ('https://thesecretofthetarot.com/','//*[@id="main"]')
+              ('https://thesecretofthetarot.com/','//*[@id="main"]'),
+              ('https://takanta.com/','//div[@class="inside-article"]') #22
               ]
 ignore_tag_by_domain = {'https://angelmanifest.com': ['ul'],
                         'https://www.psychnewsdaily.com': ['ul'],
@@ -70,10 +73,11 @@ ignore_tag_by_domain = {'https://angelmanifest.com': ['ul'],
                         'https://www.thepubliclive.com/': ['ol', 'ul'],
                         'https://www.guardian-angel-reading.com/': ['ul'],
                         'https://angelnumbersmeaning.com': ['footer','ul'],
-                        'https://thesecretofthetarot.com/': ['footer','ul']}
+                        'https://thesecretofthetarot.com/': ['footer','ul'],
+                        'https://takanta.com/': ['footer']}
 page_wise_delimeter = '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'
 para_wise_delim = '@@@@@@@@@@@@@@@@@@@'
-ignore_site_num = []
+ignore_site_num = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
 url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and-symbolism/"],
         '2':  ['https://angelmanifest.com/angel-number-@#$/'],
         '3':  ["https://angelnumber.me/@#$-meaning/"],    #no remove attribute need to add for this page
@@ -92,10 +96,10 @@ url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and
         '16': ["https://www.mindyourbodysoul.com/@#$-angel-number/","https://www.mindyourbodysoul.com/angel-number-@#$/"],
         '17': ["https://numerologynation.com/@#$-angel-number/","https://numerologynation.com/angel-number-@#$/"],
         '18': ["https://numerologysign.com/angel-number-@#$-meanings/"],
-        '19': ["https://www.psychnewsdaily.com/@#$-angel-number-meaning/"], #manual csv
+        '19': ["psychnewsdaily.csv"], #manual csv
         '20': ["https://www.ryanhart.org/angel-number-@#$-meaning/"],
         '21': ["sacredscribesangelnumbers.csv"],
-        '22': ["https://takanta.com/@#$-angel-number","https://takanta.com/angel-number-@#$/"],
+        '22': ["takanta.csv"],
         '23': ["https://thesecretofthetarot.com/angel-number-@#$/"],
         '24': ["https://trustedpsychicmediums.com/angel-numbers/angel-number-@#$/"],
         '25': ["https://numerologycolumn.com/@#$-angel-number/","https://numerologycolumn.com/angel-number-@#$-numerology-meaning/","https://numerologycolumn.com/angel-number-@#$/"],
