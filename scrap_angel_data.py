@@ -31,7 +31,7 @@ def remove_html_data(url,html_data):
     for domain_name,rplc_code in remove_code.items():
         if url.startswith(domain_name):
             for code in rplc_code:
-               #print(repr(html_data))
+               print(repr(html_data))
                html_data = html_data.replace(code['orig'],code['new'])
     return html_data
 
@@ -181,7 +181,7 @@ if not os.path.exists('Angel_number_html'):
 if not os.path.exists('Angel_number_txt'):
   os.mkdir('Angel_number_txt')
 
-for i in range(0,100):
+for i in [222]:
     scrape_and_parse_data(url_patterns,i)
 
 
