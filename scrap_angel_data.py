@@ -45,10 +45,8 @@ def scrape_and_parse_data(url_patterns,angel_number):
        if int(site_num) not in ignore_site_num:
          for pattern in patterns:
              if '@#$' not in pattern:
-                 manual_csv_df = pd.read_csv('manual_csv/'+ pattern)
-                 url_series = manual_csv_df.loc[manual_csv_df['angel_number'] == angel_number, 'address']
-                 if not url_series.empty:
-                     url = url_series.iloc[0]
+                 if angel_number in manual_csv[int(site_num)]:
+                     url = manual_csv[int(site_num)][angel_number]
                  else:
                      print(pattern + ' did not contain angel number ' + str(angel_number))
                      continue
@@ -196,6 +194,18 @@ def main():
 
 
 
+manual_csv ={}
+for i in [19,22,29,30,31]:
+    manual_csv[i] = {}
+    manual_csv_df = pd.read_csv('manual_csv/' + url_patterns[str(i)][0])
+    for j in range(len(manual_csv_df)):
+        if manual_csv_df.iloc[j]['angel_number'] not in manual_csv[i]:
+            manual_csv[i][manual_csv_df.iloc[j]['angel_number']] = manual_csv_df.iloc[j]['address']
+
+
+
+# for i in [999]:
+#     scrape_and_parse_data(url_patterns,i)
 
 
 #ipublishing, mindfuljustice
