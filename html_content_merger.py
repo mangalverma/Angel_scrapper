@@ -10,12 +10,12 @@ def FindMaxLength(lst):
 
 def merge_scrapped_data(text,angel_number):
     data = ''
-    url_wise_content = text.split(page_wise_delimeter)
+    url_wise_content = text.split(page_wise_delimeter)[:-1]
     shuffle(url_wise_content)
     merger = []
     url_site = []
     for url_content in url_wise_content:
-        para_wise_content = url_content.split(para_wise_delim)[:-1]
+        para_wise_content = url_content.split(para_wise_delim)
         page_url = url_content.split(para_wise_delim)[-1]
         url_site.append(page_url[page_url.find('http'):])
         merger.append(para_wise_content)

@@ -37,6 +37,11 @@ def remove_html_data(url,html_data):
                print(repr(html_data))
                html_data = html_data.replace(code['orig'],code['new'])
     return html_data
+def remove_blank_space_with_no_text(temp_data):
+    tags = ['h1','h2','h3','h4','h5','h6','p']
+    for tag in tags:
+        temp_data = temp_data.replace(para_wise_delim + '<' + tag + '>' + '</' + tag +'>', '')
+    return temp_data
 
 def scrape_and_parse_data(url_patterns,angel_number):
 
@@ -88,6 +93,7 @@ def scrape_and_parse_data(url_patterns,angel_number):
                      parser.feed(html_data)
                      temp_data = parser.document_content
                      temp_data = remove_html_data(url, temp_data)
+                     temp_data = remove_blank_space_with_no_text(temp_data)
                      temp_data+= url+' site'+ site_num+ page_wise_delimeter
                      scrapped_data += temp_data
                      print(f'[{url}]-->Raw data added for angel number - {angel_number}')
