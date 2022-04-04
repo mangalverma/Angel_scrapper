@@ -24,8 +24,10 @@ def get_xpath(url):
         return '//body'
 
 def store_scrapped_data(data,angel_number):
+    if not os.path.exists('Angel_raw_html'):
+        os.mkdir('Angel_raw_html')
     file_name = f"angel_number-{angel_number}.html"
-    with open (file_name,'w') as f:
+    with open (f"Angel_raw_html/{file_name}",'w') as f:
         f.write(data)
         print(f'Raw data Created for angel number - {angel_number}')
 
@@ -190,16 +192,16 @@ def main():
     if not os.path.exists('Angel_number_txt'):
       os.mkdir('Angel_number_txt')
 
-    # for i in [999]:
-    #     scrape_and_parse_data(url_patterns,i)
+    for i in [999]:
+        scrape_and_parse_data(url_patterns,i)
 
-    func = partial(scrape_and_parse_data, url_patterns)
-    with ProcessPoolExecutor() as executor:
-
-        angel_args = (i for i in range(1,2))
-        executor.map(func,angel_args)
-    t_end=time.time()-t
-    print(f"{t_end//60} minutes {t_end%60} seconds")
+    # func = partial(scrape_and_parse_data, url_patterns)
+    # with ProcessPoolExecutor() as executor:
+    #
+    #     angel_args = (i for i in range(1,2))
+    #     executor.map(func,angel_args)
+    # t_end=time.time()-t
+    # print(f"{t_end//60} minutes {t_end%60} seconds")
 
 
 
