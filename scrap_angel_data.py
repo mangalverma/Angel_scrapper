@@ -4,14 +4,17 @@ from html.parser import HTMLParser
 from lxml import etree
 from unicodedata import  normalize
 import os
+from functools import partial
 from html_content_merger import *
 from urllib. parse import urlparse
 import pandas as pd
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
-
+from concurrent.futures import ProcessPoolExecutor
+import time
 
 UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.80 Safari/537.36'
+
 def get_xpath(url):
     for domain_name,xpath in page_xpath:
         if url.startswith(domain_name):
@@ -175,14 +178,29 @@ class MYhtmlparser(HTMLParser):
                 data = data.replace('â€“','-')
                 self.document_content+=data
 
-if not os.path.exists('Angel_number_html'):
-    os.mkdir('Angel_number_html')
+def main():
+    t = time.time()
+    if not os.path.exists('Angel_number_html'):
+        os.mkdir('Angel_number_html')
 
-if not os.path.exists('Angel_number_txt'):
-  os.mkdir('Angel_number_txt')
+    if not os.path.exists('Angel_number_txt'):
+      os.mkdir('Angel_number_txt')
+    func = partial(scrape_and_parse_data, url_patterns)
+    with ProcessPoolExecutor() as executor:
 
-for i in [222]:
-    scrape_and_parse_data(url_patterns,i)
+        angel_args = (i for i in range(0,5))
+        executor.map(func,angel_args)
+    t_end=time.time()-t
+    print(f"{t_end//60} minutes {t_end%60} seconds")
+
+
+
+
+
+
+#ipublishing, mindfuljustice
+if __name__ == '__main__':
+   main()
 
 
 #ipublishing, mindfuljustice
