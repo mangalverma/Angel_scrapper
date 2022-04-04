@@ -1,5 +1,5 @@
-remove_attribute = {'https://angelnumber.org': {'id': ['M381992ScriptRootC303780'],'class': ['hm-related-posts','cat-links']},
-                    'https://angelmanifest.com': {'class': ['wp-block-embed is-type-wp-embed is-provider-angel-manifest wp-block-embed-angel-manifest','entry-meta','ct-breadcrumbs']},
+remove_attribute = {'https://angelnumber.org': {'id': ['M381992ScriptRootC303780'],'class': ['hm-related-posts','cat-links','navigation post-navigation']},
+                    'https://angelmanifest.com': {'class': ['wp-block-embed is-type-wp-embed is-provider-angel-manifest wp-block-embed-angel-manifest','entry-meta','ct-breadcrumbs'],'id':['ez-toc-container']},
                     'https://www.angelsnumbers.com/':{'id': ['le_body_row_8'], 'class': ['op-custom-html-block','breadcrumb-style-7']},
                     'https://www.coolastro.com/':{'id': ['comments','ez-toc-container'], 'class': ['entry-meta','relpost-thumb-wrapper']},
                     'https://divineangelnumbers.com/':{'id':['comments', 'grow-me-in-content-recs-root'],'class': ['uagb-toc__wrap', 'entry-category-icon', 'entry-meta clear', 'social-share-icons', 'has-background','author-box clear', 'entry-related clear', 'wp-block-image']},

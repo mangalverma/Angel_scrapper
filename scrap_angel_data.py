@@ -192,7 +192,7 @@ def main():
     func = partial(scrape_and_parse_data, url_patterns)
     with ProcessPoolExecutor() as executor:
 
-        angel_args = (i for i in range(0,5))
+        angel_args = (i for i in range(1,2))
         executor.map(func,angel_args)
     t_end=time.time()-t
     print(f"{t_end//60} minutes {t_end%60} seconds")
