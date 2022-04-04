@@ -189,6 +189,10 @@ def main():
 
     if not os.path.exists('Angel_number_txt'):
       os.mkdir('Angel_number_txt')
+
+    # for i in [999]:
+    #     scrape_and_parse_data(url_patterns,i)
+
     func = partial(scrape_and_parse_data, url_patterns)
     with ProcessPoolExecutor() as executor:
 
@@ -201,7 +205,7 @@ def main():
 
 
 manual_csv ={}
-for i in [19,22,29,30,31]:
+for i in [19,21,22,29,30,31]:
     manual_csv[i] = {}
     manual_csv_df = pd.read_csv('manual_csv/' + url_patterns[str(i)][0])
     for j in range(len(manual_csv_df)):
@@ -210,8 +214,6 @@ for i in [19,22,29,30,31]:
 
 
 
-# for i in [999]:
-#     scrape_and_parse_data(url_patterns,i)
 
 
 #ipublishing, mindfuljustice
