@@ -198,7 +198,7 @@ def main():
     func = partial(scrape_and_parse_data, url_patterns)
     with ProcessPoolExecutor() as executor:
 
-        angel_args = (i for i in range(777,778))
+        angel_args = (i for i in range(3362,3363))
         executor.map(func,angel_args)
     t_end=time.time()-t
     print(f"{t_end//60} minutes {t_end%60} seconds")
@@ -211,8 +211,8 @@ for i in [19,21,22,29,30,31]:
     manual_csv[i] = {}
     manual_csv_df = pd.read_csv('manual_csv/' + url_patterns[str(i)][0])
     for j in range(len(manual_csv_df)):
-        if manual_csv_df.iloc[j]['angel_number'] not in manual_csv[i]:
-            manual_csv[i][manual_csv_df.iloc[j]['angel_number']] = manual_csv_df.iloc[j]['address']
+        if int(manual_csv_df.iloc[j]['angel_number']) not in manual_csv[i]:
+            manual_csv[i][int(manual_csv_df.iloc[j]['angel_number'])] = manual_csv_df.iloc[j]['address']
 
 
 
