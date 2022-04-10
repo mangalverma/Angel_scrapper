@@ -192,7 +192,7 @@ def main():
     if not os.path.exists('Angel_number_txt'):
       os.mkdir('Angel_number_txt')
 
-    # for i in [999]:
+    # for i in [777]:
     #     scrape_and_parse_data(url_patterns,i)
 
     func = partial(scrape_and_parse_data, url_patterns)

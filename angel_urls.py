@@ -11,12 +11,12 @@ remove_attribute = {'https://angelnumber.org': {'id': ['M381992ScriptRootC303780
                     'https://mattbeech.com/' : {'id':['toc_container', 'single-comments','main-nav','Other_Repeating_Numbers','Learn_the_meanings_of_other_angel_numbers'],'class':['breadcrumb','nav','col-12 col-lg-4 copyright'],'data-type':['URL','page']},  #need replace_code
                     'https://www.mindbodygreen.com/' : {'class':['subcategory-label c-dark-purple ', 'editor-info__text', 'article-subnavigation', 'ad__callout container', 'article-header__share-like article-header__share-like--standard  article-header__share-like--p2', 'article-image article-image--p1 article-image--hero article-image--hero-standard ', 'article-affiliate-disclaimer', 'article-date article-date--standard', 'article-header__share-like-wrapper', 'article-header__share-like-wrapper article-header__share-like-wrapper--alt']},
                     'https://www.mindfulnessandjustice.org/' : {'class':['saboxplugin-wrap', 'entry-meta', 'InlineRecs___StyledDiv3-sc-7gga64-8 kMYAEH', 'code-block code-block-1','code-block code-block-2'],'id':['selection_bubble',]},
-                    'https://trustedpsychicmediums.com':{'class':['entry-meta','irp','entry-author author-bottom','tag-cloud','entry-related-posts'],'itemprop':['articleSection'],'id':['toc_container','respond','entry-actions','entry-related-posts']}, #24
+                    'https://trustedpsychicmediums.com':{'class':['entry-meta','irp','entry-author author-bottom','tag-cloud','entry-related-posts','entry-actions','screen-reader-text'],'itemprop':['articleSection'],'id':['toc_container','respond','entry-actions','entry-related-posts']}, #24
                     'https://numerologycolumn.com/' : {'id':['toc_container'],'class':['code-block code-block-1','author-card', 'recent-articles-container', 'entry-meta sr-only'],'href':["https://numerologist.com/anf-mesl/denpet"]}, #17
-                    'https://numerologynation.com/' : {'id':['toc_container'],'class':['ck_form', 'entry-meta', 'rank-math-breadcrumb']},
+                    'https://numerologynation.com/' : {'id':['toc_container'],'class':['ck_form', 'entry-meta', 'rank-math-breadcrumb','remove-element']},
                     'https://numerologysign.com/' : {'id':['mv-trellis-comments'],'class':['article-meta post-meta-wrapper post-meta-single post-meta-single-top', 'su-button-center', 'ShadowDomContainer___StyledDiv-paiu0k-0', 'entry-footer', 'navigation post-navigation']},
-                    'https://www.psychnewsdaily.com/' : {'id': ['more-information-about-what-angel-numbers-mean','extra-more-information-about-what-angel-numbers-mean','check-out-our-guides-to-other-popular-angel-numbers','read-our-other-articles-about-angel-numbers'],'class':['author-box ct-hidden-sm', 'simpletoc-title', 'adthrive-player-title', 'remove-element']},
-                    'https://www.ryanhart.org/' : {'class':['post-comments', 'center w-100 br3 hidden ba b--grey-3 mv4', 'mw7 center', 'mw7 mv4 center sans-serif tc', 'f7 grey-3 sans-serif', 'f7 flex justify-between grey-3 sans-serif']},
+                    'https://www.psychnewsdaily.com/' : {'id': ['more-information-about-what-angel-numbers-mean','extra-more-information-about-what-angel-numbers-mean','check-out-our-guides-to-other-popular-angel-numbers','read-our-other-articles-about-angel-numbers'],'class':['author-box ct-hidden-sm', 'simpletoc-title', 'adthrive-player-title', 'remove-element','page-description ct-hidden-sm']},
+                    'https://www.ryanhart.org/' : {'class':['post-comments', 'center w-100 br3 hidden ba b--grey-3 mv4', 'mw7 center', 'mw7 mv4 center sans-serif tc', 'f7 grey-3 sans-serif', 'f7 flex justify-between grey-3 sans-serif'],'rel':['nofollow']},
                     'http://sacredscribesangelnumbers.blogspot.com' : {'class':['post-footer', 'MsoNormal'], 'href': ['https://www.etsy.com/au/shop/JoWPottery','http://numerology-thenumbersandtheirmeanings.blogspot.com/', 'http://www.facebook.com/JoWPottery/', 'http://sacredscribes.blogspot.com.au/p/about-joanne-sacred-scribes.html', 'http://sacredscribes.blogspot.com.au/2016/10/joanne-sacred-scribes-websites-blogs.html']},
                     'https://numeroscop.net/': {'class':['header', 'n-square', 'angel-realted-posts']},
                     'https://researchmaniacs.com/': {'id': ['177976545'],'class':['header', 'n-square', 'angel-realted-posts', 'remove-element']},
@@ -24,9 +24,9 @@ remove_attribute = {'https://angelnumber.org': {'id': ['M381992ScriptRootC303780
                     'https://www.mindyourbodysoul.com': {'id':['comment-count', 'cls-video-container-wqZUnNP4', 'mv-trellis-comments', 'dpsp-content-top'], 'class': ['lwptoc_i', 'entry-footer', 'share-post']},
                     'https://willowsoul.com/': {'id': ['comments'], 'class': ['remove-element', 'clearfix', 'table-wrapper', 'social-sharing normal','author']},
                     'https://www.yummymummykitchen.com/': {'id': ['dpsp-content-top','dpsp-content-bottom','grow-me-inline-subscribe-cta-root-0'], 'class': ['post-meta post-date', 'post-meta', 'post-meta meta-centered'], 'href': ['http://amazon.com/Angel-Numbers-101-Meaning-Sequences/dp/1401920012','http://amazon.com/gp/product/1788173473']},
-                    'https://www.thepubliclive.com/': {'class': ['head angel-number', 'post-bottom clear-block', 'story-fb-twitter clear-block','author']},
+                    'https://www.thepubliclive.com/': {'class': ['head angel-number', 'post-bottom clear-block', 'story-fb-twitter clear-block','author','fb-comment clear-block']},
                     'https://angelnumbersmeaning.com': {'id': ['M319879ScriptRootC214660_03376'],'class':['ezoic-ad nativedouble-1 nativedouble-1110 adtester-container adtester-container-110', 'relpost-thumb-wrapper', 'ez-report-ad-button','meta-category']},
-                    'https://thesecretofthetarot.com/': {'id': ['ez-toc-container'], 'class': ['entry-header', 'p1', 'rp4wp-related-posts']},
+                    'https://thesecretofthetarot.com/': {'id': ['ez-toc-container'], 'class': ['entry-header', 'p1', 'rp4wp-related-posts','remove-element'],'rel':['”nofollow']},
                     'https://takanta.com/': {'id':['ez-toc-container'],'class': ['entry-meta']},
                     'https://angelnumber.me': {'id':['toc_container'], 'class': ['ast-breadcrumbs-wrapper']}
                     }
@@ -78,7 +78,7 @@ ignore_tag_by_domain = {'https://angelmanifest.com': ['ul'],
                         'https://www.coolastro.com/': ['ul']}
 page_wise_delimeter = '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'
 para_wise_delim = '@@@@@@@@@@@@@@@@@@@'
-ignore_site_num = [1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
+ignore_site_num = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
 url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and-symbolism/"],
         '2':  ['https://angelmanifest.com/angel-number-@#$/'],
         '3':  ["https://angelnumber.me/@#$-meaning/"],    #no remove attribute need to add for this page
@@ -117,7 +117,9 @@ remove_code = {'https://hiddennumerology.com':[{'orig':'<h3>Read the meaning of 
                                             {'orig': '<p>Also read:</p>','new': ''},
                                             {'orig': '<h2>Also Read:</h2>', 'new':''}],
                'https://numerologycolumn.com/':[{'orig':'<h3 class="h2">Recent Posts</h3>', 'new': ''},
-                                                {'orig':'<h2>Related posts</h2>', 'new': ''}],
+                                                {'orig':'<h2>Related posts</h2>', 'new': ''},
+                                                ],
+               'https://numerologynation.com/':[{'orig':'<p><strong>Read More','new':'<p class ="remove-element"><strong>Read More'}],
                'http://sacredscribesangelnumbers.blogspot.com': [{'orig':'<span ', 'new': '<p '},
                                                                  {'orig':'</span', 'new': '</p '}],
                'https://researchmaniacs.com/':[{'orig': '<b>Important Notes:</b>', 'new':''},
@@ -135,7 +137,8 @@ remove_code = {'https://hiddennumerology.com':[{'orig':'<h3>Read the meaning of 
                'https://joynumber.com/': [{'orig': '<h2 id="archived-comments"','new':'<div class = "remove-element" ><h2 id="archived-comments"'},
                                           {'orig': '</article>','new':'</div></article>'}],
                'https://willowsoul.com': [{'orig': '</header>\n\n        <p>', 'new': '</header>\n\n        <p class = "remove-element">'},
-                                          {'orig': "<p><span>PUBLISHER", 'new': "<p class = 'remove-element'><span>PUBLISHER"}],
+                                          {'orig': "<p><span>PUBLISHER", 'new': "<p class = 'remove-element'><span>PUBLISHER"},
+                                          {'orig': "<p>PUBLISHER", 'new': "<p class = 'remove-element'>PUBLISHER"}],
                'https://www.yummymummykitchen.com':[{'orig': '<p>Sources: </p>', 'new': ''},
                                                     {'orig':'<h2>More Common Angel Numbers &amp; Their Meanings </h2>', 'new': ''},
                                                     {'orig':'<h2>MORE COMMON ANGEL NUMBER SEQUENCES </h2>', 'new': ''},
@@ -149,13 +152,16 @@ remove_code = {'https://hiddennumerology.com':[{'orig':'<h3>Read the meaning of 
                                                    {'orig': '<p>Read also:</p>', 'new': ''}],
                'https://thesecretofthetarot.com': [{'orig': '<h2>Angel numbers communicated frequently:</h2>', 'new': ''},
                                                    {'orig': '<h2>Explore our in-depth guides below:</h2>', 'new': ''},
-                                                   {'orig': 'PSSST: Are You Ready to Finally Meet Your True Soulmate?? Get a psychic drawing of your soulmate now!', 'new': ''}],
+                                                   {'orig': '<strong>PSSST....Relationship Compatibility Quiz Reveals The Secrets Of His Zodiac Sign: </strong>','new': ''},
+                                                   {'orig': 'PSSST: Are You Ready to Finally Meet Your True Soulmate?? Get a psychic drawing of your soulmate now!', 'new': ''},
+                                                   {'orig':'<p>Additional reading:','new':'<p class="remove-element">Additional reading:'}],
                'https://www.psychnewsdaily.com/': [{'orig': '<p><strong>Photo', 'new': '<p class ="remove-element"><strong>Photo'},
                                                    {'orig': '<p>Photos:', 'new': '<p class ="remove-element">Photos:'},
                                                    {'orig': '<p>Thanks for reading!</p>', 'new': ''},
                                                    {'orig': '<p>Related posts:</p>', 'new': ''}],
-               'https://mattbeech.com/':[{'orig':' | ','new':''}]
-               }
+               'https://mattbeech.com/':[{'orig':' | ','new':''}],
+               'https://numeroscop.net':[{'orig':'<h2>Related posts</h2>','new':''},
+                                         {'orig':'<h3>Related posts</h3>','new':''}]}
 default_redirected = {'www.mindyourbodysoul.com':'https://www.mindyourbodysoul.com',
                       'www.psychnewsdaily.com': 'https://www.psychnewsdaily.com',
                       'joynumber.com': 'https://joynumber.com'}
