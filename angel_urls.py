@@ -13,7 +13,7 @@ remove_attribute = {'https://angelnumber.org': {'id': ['M381992ScriptRootC303780
                     'https://www.mindfulnessandjustice.org/' : {'class':['saboxplugin-wrap', 'entry-meta', 'InlineRecs___StyledDiv3-sc-7gga64-8 kMYAEH', 'code-block code-block-1','code-block code-block-2'],'id':['selection_bubble',]},
                     'https://trustedpsychicmediums.com':{'class':['entry-meta','irp','entry-author author-bottom','tag-cloud','entry-related-posts'],'itemprop':['articleSection'],'id':['toc_container','respond','entry-actions','entry-related-posts']}, #24
                     'https://numerologycolumn.com/' : {'id':['toc_container'],'class':['code-block code-block-1','author-card', 'recent-articles-container', 'entry-meta sr-only'],'href':["https://numerologist.com/anf-mesl/denpet"]}, #17
-                    'https://numerologynation.com/' : {'id':['toc_container'],'class':['ck_form', 'entry-meta', 'rank-math-breadcrumb']},
+                    'https://numerologynation.com/' : {'id':['toc_container'],'class':['ck_form', 'entry-meta', 'rank-math-breadcrumb','remove-element']},
                     'https://numerologysign.com/' : {'id':['mv-trellis-comments'],'class':['article-meta post-meta-wrapper post-meta-single post-meta-single-top', 'su-button-center', 'ShadowDomContainer___StyledDiv-paiu0k-0', 'entry-footer', 'navigation post-navigation']},
                     'https://www.psychnewsdaily.com/' : {'id': ['more-information-about-what-angel-numbers-mean','extra-more-information-about-what-angel-numbers-mean','check-out-our-guides-to-other-popular-angel-numbers','read-our-other-articles-about-angel-numbers'],'class':['author-box ct-hidden-sm', 'simpletoc-title', 'adthrive-player-title', 'remove-element']},
                     'https://www.ryanhart.org/' : {'class':['post-comments', 'center w-100 br3 hidden ba b--grey-3 mv4', 'mw7 center', 'mw7 mv4 center sans-serif tc', 'f7 grey-3 sans-serif', 'f7 flex justify-between grey-3 sans-serif']},
@@ -78,7 +78,7 @@ ignore_tag_by_domain = {'https://angelmanifest.com': ['ul'],
                         'https://www.coolastro.com/': ['ul']}
 page_wise_delimeter = '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'
 para_wise_delim = '@@@@@@@@@@@@@@@@@@@'
-ignore_site_num = [1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
+ignore_site_num = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
 url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and-symbolism/"],
         '2':  ['https://angelmanifest.com/angel-number-@#$/'],
         '3':  ["https://angelnumber.me/@#$-meaning/"],    #no remove attribute need to add for this page
@@ -117,7 +117,9 @@ remove_code = {'https://hiddennumerology.com':[{'orig':'<h3>Read the meaning of 
                                             {'orig': '<p>Also read:</p>','new': ''},
                                             {'orig': '<h2>Also Read:</h2>', 'new':''}],
                'https://numerologycolumn.com/':[{'orig':'<h3 class="h2">Recent Posts</h3>', 'new': ''},
-                                                {'orig':'<h2>Related posts</h2>', 'new': ''}],
+                                                {'orig':'<h2>Related posts</h2>', 'new': ''},
+                                                ],
+               'https://numerologynation.com/':[{'orig':'<p><strong>Read More','new':'<p class ="remove-element"><strong>Read More'}],
                'http://sacredscribesangelnumbers.blogspot.com': [{'orig':'<span ', 'new': '<p '},
                                                                  {'orig':'</span', 'new': '</p '}],
                'https://researchmaniacs.com/':[{'orig': '<b>Important Notes:</b>', 'new':''},

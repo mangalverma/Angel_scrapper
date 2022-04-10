@@ -192,16 +192,16 @@ def main():
     if not os.path.exists('Angel_number_txt'):
       os.mkdir('Angel_number_txt')
 
-    # for i in [999]:
-    #     scrape_and_parse_data(url_patterns,i)
+    for i in [777]:
+        scrape_and_parse_data(url_patterns,i)
 
-    func = partial(scrape_and_parse_data, url_patterns)
-    with ProcessPoolExecutor() as executor:
-
-        angel_args = (i for i in range(777,778))
-        executor.map(func,angel_args)
-    t_end=time.time()-t
-    print(f"{t_end//60} minutes {t_end%60} seconds")
+    # func = partial(scrape_and_parse_data, url_patterns)
+    # with ProcessPoolExecutor() as executor:
+    #
+    #     angel_args = (i for i in range(777,778))
+    #     executor.map(func,angel_args)
+    # t_end=time.time()-t
+    # print(f"{t_end//60} minutes {t_end%60} seconds")
 
 
 
