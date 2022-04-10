@@ -7,7 +7,7 @@ remove_attribute = {'https://angelnumber.org': {'id': ['M381992ScriptRootC303780
                     'https://hiddennumerology.com/': {'id': ['ez-toc-container', 'dpsp-content-bottom', 'grow-me-in-content-recs-root','comments'], 'class':['purplebox','pinkbox','yellowbox', 'emalsubinpt', 'saboxplugin-tab', 'dpsp-share-text ', 'navigation post-navigation', 'tablelinks','entry-meta']},
                     'https://www.adviseastro.com' : {'id':['ez-toc-container'],'class':['entry-meta']},
                     'https://www.ipublishing.co.in/' : {'id':['toc_container'],'class':['entry-meta']},
-                    'https://joynumber.com/' : {'id':['toc_container'],'class':['css-ujfvsi eods1cv1','css-v5rwlu eods1cv8','css-nq5slz e16ntblo5','css-75up63 e1nq2w9512', 'css-19p6q85 ecyq0i81'],'role':['complementary']}, #problem in 777
+                    'https://joynumber.com/' : {'id':['toc_container'],'class':['css-ujfvsi eods1cv1','css-v5rwlu eods1cv8','css-nq5slz e16ntblo5','css-75up63 e1nq2w9512', 'css-19p6q85 ecyq0i81','remove-element'],'role':['complementary']}, #problem in 777
                     'https://mattbeech.com/' : {'id':['toc_container', 'single-comments','main-nav','Other_Repeating_Numbers','Learn_the_meanings_of_other_angel_numbers'],'class':['breadcrumb','nav','col-12 col-lg-4 copyright'],'data-type':['URL','page']},  #need replace_code
                     'https://www.mindbodygreen.com/' : {'class':['subcategory-label c-dark-purple ', 'editor-info__text', 'article-subnavigation', 'ad__callout container', 'article-header__share-like article-header__share-like--standard  article-header__share-like--p2', 'article-image article-image--p1 article-image--hero article-image--hero-standard ', 'article-affiliate-disclaimer', 'article-date article-date--standard', 'article-header__share-like-wrapper', 'article-header__share-like-wrapper article-header__share-like-wrapper--alt']},
                     'https://www.mindfulnessandjustice.org/' : {'class':['saboxplugin-wrap', 'entry-meta', 'InlineRecs___StyledDiv3-sc-7gga64-8 kMYAEH', 'code-block code-block-1','code-block code-block-2'],'id':['selection_bubble',]},
@@ -78,7 +78,7 @@ ignore_tag_by_domain = {'https://angelmanifest.com': ['ul'],
                         'https://www.coolastro.com/': ['ul']}
 page_wise_delimeter = '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'
 para_wise_delim = '@@@@@@@@@@@@@@@@@@@'
-ignore_site_num = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
+ignore_site_num = [1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]
 url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and-symbolism/"],
         '2':  ['https://angelmanifest.com/angel-number-@#$/'],
         '3':  ["https://angelnumber.me/@#$-meaning/"],    #no remove attribute need to add for this page
