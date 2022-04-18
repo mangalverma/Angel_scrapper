@@ -36,7 +36,7 @@ def remove_html_data(url,html_data):
     for domain_name,rplc_code in remove_code.items():
         if url.startswith(domain_name):
             for code in rplc_code:
-               print(repr(html_data))
+               #print(repr(html_data))
                html_data = html_data.replace(code['orig'],code['new'])
     return html_data
 def remove_blank_space_with_no_text(temp_data):
@@ -65,16 +65,19 @@ def scrape_and_parse_data(url_patterns,angel_number):
              session.mount('http://', adapter)
              session.mount('https://', adapter)
              response = session.get(url,headers={"User-Agent": UA})
-             if response.status_code !=200:
+             response_content = str(response.content)
+             if response.status_code !=200 or response_content=='b\'404 Error\'':
                  print(f"{url} NOT FOUND -{ response.status_code}")
                  continue
              else:
                  if response.url!= url:
                      print(f'url redirect to {response.url}')
                      domain = urlparse(url).netloc
-                     redirected_angel_no = response.url[response.url.rfind(url[-2])+1:response.url.rfind(url[-2])+2]
+                     url_end_index = len(url) - 1
                      try:
-                         if response.url == default_redirected.get(domain) or redirected_angel_no.isdigit():
+                         redirected_angel_no_last = response.url[response.url.find(str(angel_number)) + len(str(angel_number))]
+                         redirected_angel_no_start = response.url[response.url.find(str(angel_number))- 1]
+                         if response.url == default_redirected.get(domain) or redirected_angel_no_last.isdigit() or redirected_angel_no_start.isdigit():
                              print(f"skipping {url} because it is redirecting to homepage/wrong urls {response.url}")
                              continue
                      except:
