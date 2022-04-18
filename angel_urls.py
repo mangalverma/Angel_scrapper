@@ -82,7 +82,7 @@ ignore_tag_by_domain = {'https://angelmanifest.com': ['ul'],
                         'https://numerologynation.com/': ['ul']}
 page_wise_delimeter = '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'
 para_wise_delim = '@@@@@@@@@@@@@@@@@@@'
-ignore_site_num = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30]
+ignore_site_num = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,20,21,22,23,24,25,26,27,28,29,30,31]
 url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and-symbolism/"],
         '2':  ['https://angelmanifest.com/angel-number-@#$/'],
         '3':  ["https://angelnumber.me/@#$-meaning/"],    #no remove attribute need to add for this page
@@ -176,7 +176,8 @@ remove_code = {'https://hiddennumerology.com':[{'orig':'<h3>Read the meaning of 
                                                    {'orig': '<p>Photos:', 'new': '<p class ="remove-element">Photos:'},
                                                    {'orig': '<p>Thanks for reading!</p>', 'new': ''},
                                                    {'orig': '<p>Related posts:</p>', 'new': ''},
-                                                   {'orig': '<p>Find out more about </p>', 'new': '<p class = "remove-element">Find out more about '},
+                                                   {'orig': '<p>Find out more', 'new': '<p class = "remove-element">Find out more'},
+                                                   {'orig': '<p>Think of it as your own personal blueprint to success and happiness: a blueprint that will help you live your most amazing life. Find out more here.</p>','new': ''},
                                                    {'orig': 'To lean more about angel numbers, see the below articles:', 'new': ''},
                                                    {'orig': 'Check out our guides to other popular angel numbers', 'new': ''},
                                                    {'orig': '<p>Fortunately, we can correct this right now','new':'<p class ="remove-element">Fortunately, we can correct this right now' }],
