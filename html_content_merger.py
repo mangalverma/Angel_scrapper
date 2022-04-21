@@ -27,9 +27,7 @@ def merge_scrapped_data(text,angel_number):
             if len(merger[j]) > 0:
                 temp_data =  merger[j][0]
                 merger[j].remove(temp_data)
-                data = data + '<a href = ' +  url_site[j] + '>' + url_site[j] + '</a><br>' + temp_data
-            else:
-                data = data + '<a href = ' + url_site[j] + '>' + url_site[j] + '</a><br>'
+                data = data +  temp_data
     soup = BeautifulSoup(data, "html.parser")
     with open('Angel_number_html/' + str(angel_number) + '.html', 'w') as f:
 
