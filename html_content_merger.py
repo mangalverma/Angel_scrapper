@@ -2,6 +2,8 @@ from angel_urls import *
 import os
 import shutil
 from random import shuffle
+from bs4 import BeautifulSoup
+import html2text
 
 
 def FindMaxLength(lst):
@@ -25,13 +27,16 @@ def merge_scrapped_data(text,angel_number):
             if len(merger[j]) > 0:
                 temp_data =  merger[j][0]
                 merger[j].remove(temp_data)
-                data = data + '<a href = ' +  url_site[j] + '>' + url_site[j] + '</a><br>' + temp_data
-            else:
-                data = data + '<a href = ' + url_site[j] + '>' + url_site[j] + '</a><br>'
+                data = data +  temp_data
+    soup = BeautifulSoup(data, "html.parser")
     with open('Angel_number_html/' + str(angel_number) + '.html', 'w') as f:
+
+        data=soup.prettify()
         f.write(data)
-    shutil.copyfile('Angel_number_html/' + str(angel_number) + '.html', 'Angel_number_txt/' + str(angel_number) + '.txt')
-
-
+    with open('Angel_number_txt/' + str(angel_number) + '.txt', 'w') as f:
+        h = html2text.HTML2Text()
+        h.ignore_links = True
+        for line in h.handle(str(soup)):  # handle() Function only accepts string as parameter
+            f.write(line)
 
 

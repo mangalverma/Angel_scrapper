@@ -13,7 +13,7 @@ from requests.packages.urllib3.util.retry import Retry
 from concurrent.futures import ProcessPoolExecutor
 import time
 
-UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTM944732113L, like Gecko) Chrome/98.0.4758.80 Safari/537.36'
+UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.80 Safari/537.36'
 
 def get_xpath(url):
     for domain_name,xpath in page_xpath:
