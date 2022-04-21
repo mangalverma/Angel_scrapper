@@ -24,7 +24,7 @@ remove_attribute = {'https://angelnumber.org': {'id': ['M381992ScriptRootC303780
                     'https://www.mindyourbodysoul.com': {'id':['comment-count', 'cls-video-container-wqZUnNP4', 'mv-trellis-comments', 'dpsp-content-top'], 'class': ['lwptoc_i', 'entry-footer', 'share-post']},
                     'https://willowsoul.com/': {'id': ['comments'], 'class': ['remove-element', 'clearfix', 'table-wrapper', 'social-sharing normal','author']},
                     'https://www.yummymummykitchen.com/': {'id': ['dpsp-content-top','dpsp-content-bottom','grow-me-inline-subscribe-cta-root-0'], 'class': ['post-meta post-date', 'post-meta', 'post-meta meta-centered','remove-element'], 'href': ['http://amazon.com/Angel-Numbers-101-Meaning-Sequences/dp/1401920012','http://amazon.com/gp/product/1788173473']},
-                    'https://www.thepubliclive.com/': {'class': ['head angel-number', 'post-bottom clear-block', 'story-fb-twitter clear-block','author','fb-comment clear-block']},
+                    'https://www.thepubliclive.com/': {'class': ['head angel-number', 'post-bottom clear-block', 'story-fb-twitter clear-block','author','fb-comment clear-block','postmetadata']},
                     'https://angelnumbersmeaning.com': {'id': ['M319879ScriptRootC214660_03376'],'class':['remove-element','ezoic-ad nativedouble-1 nativedouble-1110 adtester-container adtester-container-110', 'relpost-thumb-wrapper', 'ez-report-ad-button','meta-category']},
                     'https://thesecretofthetarot.com/': {'id': ['ez-toc-container'], 'class': ['dpsp-share-text ','entry-header', 'p1', 'rp4wp-related-posts','remove-element'],'rel':['”nofollow'], 'href': ['https://thesecretofthetarot.com/reading']},
                     'https://takanta.com/': {'id':['ez-toc-container'],'class': ['entry-meta']},
@@ -82,7 +82,7 @@ ignore_tag_by_domain = {'https://angelmanifest.com': ['ul'],
                         'https://numerologynation.com/': ['ul']}
 page_wise_delimeter = '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'
 para_wise_delim = '@@@@@@@@@@@@@@@@@@@'
-ignore_site_num = [11,12,13,14,15,16,17,18,20,21,22,23,24,25,26,27,28,29,30,31]
+ignore_site_num = []
 url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and-symbolism/"],
         '2':  ['https://angelmanifest.com/angel-number-@#$/'],
         '3':  ["https://angelnumber.me/@#$-meaning/"],    #no remove attribute need to add for this page
