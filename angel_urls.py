@@ -18,7 +18,7 @@ remove_attribute = {'https://angelnumber.org': {'id': ['M381992ScriptRootC303780
                     'https://www.psychnewsdaily.com/' : {'id': ['more-information-about-what-angel-numbers-mean','extra-more-information-about-what-angel-numbers-mean','check-out-our-guides-to-other-popular-angel-numbers','read-our-other-articles-about-angel-numbers'],'class':['author-box ct-hidden-sm', 'simpletoc-title', 'adthrive-player-title', 'remove-element','page-description ct-hidden-sm']},
                     'https://www.ryanhart.org/' : {'class':['remove-element','post-comments', 'center w-100 br3 hidden ba b--grey-3 mv4', 'mw7 center', 'mw7 mv4 center sans-serif tc', 'f7 grey-3 sans-serif', 'f7 flex justify-between grey-3 sans-serif','remove-element'],'rel':['nofollow']},
                     'http://sacredscribesangelnumbers.blogspot.com' : {'class':['post-footer', 'MsoNormal'], 'href': ['https://www.etsy.com/au/shop/JoWPottery','http://numerology-thenumbersandtheirmeanings.blogspot.com/', 'http://www.facebook.com/JoWPottery/', 'http://sacredscribes.blogspot.com.au/p/about-joanne-sacred-scribes.html', 'http://sacredscribes.blogspot.com.au/2016/10/joanne-sacred-scribes-websites-blogs.html', 'https://sacredscribesangelnumbers.blogspot.com/p/get-psychic-reading-for-199.html','http://www.instagram.com/sacredscribes_jowpottery/','https://trykeen.com/sacredscribes']},
-                    'https://numeroscop.net/': {'class':['header', 'n-square', 'angel-realted-posts']},
+                    'https://numeroscop.net/': {'class':['header', 'n-square', 'angel-realted-posts','num-preproc-hlt']},
                     'https://researchmaniacs.com/': {'id': ['177976545'],'class':['header', 'n-square', 'angel-realted-posts', 'remove-element']},
                     'https://www.sunsigns.org/': {'id':[''], 'class': ['single-post-video', 'post-meta', 'share-post']},
                     'https://www.mindyourbodysoul.com': {'id':['comment-count', 'cls-video-container-wqZUnNP4', 'mv-trellis-comments', 'dpsp-content-top'], 'class': ['lwptoc_i', 'entry-footer', 'share-post']},
@@ -82,7 +82,7 @@ ignore_tag_by_domain = {'https://angelmanifest.com': ['ul'],
                         'https://numerologynation.com/': ['ul']}
 page_wise_delimeter = '$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$'
 para_wise_delim = '@@@@@@@@@@@@@@@@@@@'
-ignore_site_num = []
+ignore_site_num = [17]
 url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and-symbolism/"],
         '2':  ['https://angelmanifest.com/angel-number-@#$/'],
         '3':  ["https://angelnumber.me/@#$-meaning/"],    #no remove attribute need to add for this page

@@ -99,7 +99,7 @@ def scrape_and_parse_data(url_patterns,angel_number):
                      temp_data = parser.document_content
                      temp_data = remove_html_data(url, temp_data)
                      temp_data = remove_blank_space_with_no_text(temp_data)
-                     temp_data+= url+' site'+ site_num+ page_wise_delimeter
+                     temp_data+= page_wise_delimeter
                      scrapped_data += temp_data
                      print(f'[{url}]-->Raw data added for angel number - {angel_number}')
                  break
@@ -201,7 +201,7 @@ def main():
     func = partial(scrape_and_parse_data, url_patterns)
     with ProcessPoolExecutor() as executor:
 
-        angel_args = (i for i in range(999,1000))
+        angel_args = (5465, 6678, 3454, 7687, 9786, 4564, 5645, 7563, 7686, 8556)
         executor.map(func,angel_args)
     t_end=time.time()-t
     print(f"{t_end//60} minutes {t_end%60} seconds")
