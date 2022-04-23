@@ -15,6 +15,10 @@ import time
 
 UA = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.80 Safari/537.36'
 
+def get_proxy():
+    payload = {'api_key': '5268059af572aa965bed1d0bc2fc2ebe', 'url': 'https://httpbin.org/ip', 'render': 'true', 'country_code': 'us'}
+    return payload
+
 def get_xpath(url):
     for domain_name,xpath in page_xpath:
         if url.startswith(domain_name):
@@ -64,7 +68,10 @@ def scrape_and_parse_data(url_patterns,angel_number):
              adapter = HTTPAdapter(max_retries=retry)
              session.mount('http://', adapter)
              session.mount('https://', adapter)
-             response = session.get(url,headers={"User-Agent": UA})
+             if url.startswith("https://numerologynation.com"):
+                   response = session.get(url,headers={"User-Agent": UA},params=get_proxy())
+             else:
+                   response = session.get(url, headers={"User-Agent": UA})
              response_content = str(response.content)
              if response.status_code !=200 or response_content=='b\'404 Error\'':
                  print(f"{url} NOT FOUND -{ response.status_code}")
@@ -201,7 +208,7 @@ def main():
     func = partial(scrape_and_parse_data, url_patterns)
     with ProcessPoolExecutor() as executor:
 
-        angel_args = (5465, 6678, 3454, 7687, 9786, 4564, 5645, 7563, 7686, 8556)
+        angel_args = (i for i in range(1,101))
         executor.map(func,angel_args)
     t_end=time.time()-t
     print(f"{t_end//60} minutes {t_end%60} seconds")
