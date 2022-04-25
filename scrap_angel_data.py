@@ -68,6 +68,7 @@ def scrape_and_parse_data(url_patterns,angel_number):
              adapter = HTTPAdapter(max_retries=retry)
              session.mount('http://', adapter)
              session.mount('https://', adapter)
+             print(str(url) + "going to fetch")
              if url.startswith("https://numerologynation.com"):
                    response = session.get(url,headers={"User-Agent": UA},params=get_proxy())
              else:
@@ -208,7 +209,7 @@ def main():
     func = partial(scrape_and_parse_data, url_patterns)
     with ProcessPoolExecutor() as executor:
 
-        angel_args = (i for i in range(1,101))
+        angel_args = (i for i in range(171,175))
         executor.map(func,angel_args)
     t_end=time.time()-t
     print(f"{t_end//60} minutes {t_end%60} seconds")
@@ -217,7 +218,7 @@ def main():
 
 
 manual_csv ={}
-for i in [19,21,22,29,30,31]:
+for i in [17,19,21,22,29,30,31]:
     manual_csv[i] = {}
     manual_csv_df = pd.read_csv('manual_csv/' + url_patterns[str(i)][0])
     for j in range(len(manual_csv_df)):

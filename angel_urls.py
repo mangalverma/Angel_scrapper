@@ -99,7 +99,7 @@ url_patterns = {'1':  ["https://www.adviseastro.com/angel-number-@#$-meaning-and
         '14': ["https://www.mindbodygreen.com/articles/@#$-angel-number-meaning", "https://www.mindbodygreen.com/articles/@#$-angel-number"],
         '15': ["https://www.mindfulnessandjustice.org/angel-number-@#$-meaning/","https://www.mindfulnessandjustice.org/angel-number-@#$/"],
         '16': ["https://www.mindyourbodysoul.com/@#$-angel-number/","https://www.mindyourbodysoul.com/angel-number-@#$/"],
-        '17': ["https://numerologynation.com/@#$-angel-number/","https://numerologynation.com/angel-number-@#$/"],
+        '17': ["numerologynation.csv"],
         '18': ["https://numerologysign.com/angel-number-@#$-meanings/"],
         '19': ["psychnewsdaily.csv"], #manual csv
         '20': ["https://www.ryanhart.org/angel-number-@#$-meaning/"],
