@@ -69,10 +69,10 @@ def scrape_and_parse_data(url_patterns,angel_number):
              session.mount('http://', adapter)
              session.mount('https://', adapter)
              print(str(url) + "going to fetch")
-             if url.startswith("https://numerologynation.com"):
-                   response = session.get(url,headers={"User-Agent": UA},params=get_proxy())
-             else:
-                   response = session.get(url, headers={"User-Agent": UA})
+             # if url.startswith("https://numerologynation.com"):
+             #       response = session.get(url,headers={"User-Agent": UA},params=get_proxy())
+             # else:
+             response = session.get(url, headers={"User-Agent": UA})
              response_content = str(response.content)
              if response.status_code !=200 or response_content=='b\'404 Error\'':
                  print(f"{url} NOT FOUND -{ response.status_code}")
